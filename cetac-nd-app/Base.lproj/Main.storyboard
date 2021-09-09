@@ -702,6 +702,20 @@
                                     <segue destination="Ipj-eG-ds9" kind="show" id="OMH-Pt-GQf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aII-nK-zCi">
+                                <rect key="frame" x="31" y="314" width="352" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="hQq-IH-12d" kind="show" id="H2V-L6-uAF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQx-Hf-aZL">
+                                <rect key="frame" x="31" y="350" width="352" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="YwB-1U-iLb" kind="show" id="kZa-aY-wrL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6uT-fS-4jT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1295,6 +1309,50 @@ CQkJA
             </objects>
             <point key="canvasLocation" x="2054" y="139"/>
         </scene>
+        <!--Reporte Motivos-->
+        <scene sceneID="RKv-7a-aeM">
+            <objects>
+                <viewController title="Reporte Motivos" id="hQq-IH-12d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ze8-ZC-HoI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="intervencion" translatesAutoresizingMaskIntoConstraints="NO" id="pQA-ma-ZNg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ngD-BM-Fjq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reporte Motivos" id="7dM-cr-GDz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DSD-2t-OEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2054" y="846"/>
+        </scene>
+        <!--Reporte Cuotas-->
+        <scene sceneID="UKy-rY-Roj">
+            <objects>
+                <viewController title="Reporte Cuotas" id="YwB-1U-iLb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HdJ-fR-EAQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cuotas" translatesAutoresizingMaskIntoConstraints="NO" id="pwd-wq-Nkb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gGu-D5-wby"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reporte Cuotas" id="LWT-Au-UjQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zi3-Pl-iY0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2748" y="846"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AdminAperturaExpediente" width="375" height="667"/>
@@ -1336,6 +1394,8 @@ CQkJA
         <image name="Servicios Tecnicas Alternativas-2" width="375" height="667"/>
         <image name="Valores" width="375" height="667"/>
         <image name="Vision" width="375" height="667"/>
+        <image name="cuotas" width="375" height="667"/>
+        <image name="intervencion" width="375" height="667"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
