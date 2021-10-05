@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D06CDEE270AD3B8004CF4A7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */; };
+		6D06CDF3270AD983004CF4A7 /* InformationMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */; };
+		6D06CDF5270AE43B004CF4A7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDF4270AE43B004CF4A7 /* Service.swift */; };
+		6D06CDF7270AE71F004CF4A7 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D06CDF6270AE71F004CF4A7 /* services.json */; };
+		6D06CDF9270B4AD8004CF4A7 /* ServiceInformationControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDF8270B4AD7004CF4A7 /* ServiceInformationControlller.swift */; };
 		6D6B393D26E7C85B008DBC5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B393C26E7C85B008DBC5E /* AppDelegate.swift */; };
 		6D6B393F26E7C85B008DBC5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B393E26E7C85B008DBC5E /* SceneDelegate.swift */; };
-		6D6B394126E7C85B008DBC5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6B394026E7C85B008DBC5E /* ViewController.swift */; };
 		6D6B394426E7C85C008DBC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6B394226E7C85C008DBC5E /* Main.storyboard */; };
 		6D6B394626E7C85D008DBC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6B394526E7C85D008DBC5E /* Assets.xcassets */; };
 		6D6B394926E7C85D008DBC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6B394726E7C85D008DBC5E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationMenuController.swift; sourceTree = "<group>"; };
+		6D06CDF4270AE43B004CF4A7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		6D06CDF6270AE71F004CF4A7 /* services.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
+		6D06CDF8270B4AD7004CF4A7 /* ServiceInformationControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInformationControlller.swift; sourceTree = "<group>"; };
 		6D6B393926E7C85B008DBC5E /* cetac-nd-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cetac-nd-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6B393C26E7C85B008DBC5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D6B393E26E7C85B008DBC5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6D6B394026E7C85B008DBC5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6D6B394326E7C85C008DBC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D6B394526E7C85D008DBC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D6B394826E7C85D008DBC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,13 +64,17 @@
 		6D6B393B26E7C85B008DBC5E /* cetac-nd-app */ = {
 			isa = PBXGroup;
 			children = (
+				6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */,
 				6D6B393C26E7C85B008DBC5E /* AppDelegate.swift */,
 				6D6B393E26E7C85B008DBC5E /* SceneDelegate.swift */,
-				6D6B394026E7C85B008DBC5E /* ViewController.swift */,
 				6D6B394226E7C85C008DBC5E /* Main.storyboard */,
 				6D6B394526E7C85D008DBC5E /* Assets.xcassets */,
 				6D6B394726E7C85D008DBC5E /* LaunchScreen.storyboard */,
 				6D6B394A26E7C85D008DBC5E /* Info.plist */,
+				6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */,
+				6D06CDF6270AE71F004CF4A7 /* services.json */,
+				6D06CDF4270AE43B004CF4A7 /* Service.swift */,
+				6D06CDF8270B4AD7004CF4A7 /* ServiceInformationControlller.swift */,
 			);
 			path = "cetac-nd-app";
 			sourceTree = "<group>";
@@ -125,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D6B394926E7C85D008DBC5E /* LaunchScreen.storyboard in Resources */,
+				6D06CDF7270AE71F004CF4A7 /* services.json in Resources */,
 				6D6B394626E7C85D008DBC5E /* Assets.xcassets in Resources */,
 				6D6B394426E7C85C008DBC5E /* Main.storyboard in Resources */,
 			);
@@ -137,8 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6B394126E7C85B008DBC5E /* ViewController.swift in Sources */,
 				6D6B393D26E7C85B008DBC5E /* AppDelegate.swift in Sources */,
+				6D06CDF3270AD983004CF4A7 /* InformationMenuController.swift in Sources */,
+				6D06CDF5270AE43B004CF4A7 /* Service.swift in Sources */,
+				6D06CDF9270B4AD8004CF4A7 /* ServiceInformationControlller.swift in Sources */,
+				6D06CDEE270AD3B8004CF4A7 /* MainTabController.swift in Sources */,
 				6D6B393F26E7C85B008DBC5E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A5GN88TCH;
 				INFOPLIST_FILE = "cetac-nd-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,6 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A5GN88TCH;
 				INFOPLIST_FILE = "cetac-nd-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13.241" height="23.224" viewBox="0 0 13.241 23.224">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2cabea;
+      }
+    </style>
+  </defs>
+  <g id="flecha" transform="translate(0 23.224) rotate(-90)">
+    <path id="Path_7" data-name="Path 7" class="cls-1" d="M10.466,12.763.478,2.776a1.625,1.625,0,0,1,2.3-2.3l8.836,8.836L20.448.478a1.627,1.627,0,0,1,2.3,2.3l-9.982,9.982a1.623,1.623,0,0,1-1.151.478A1.6,1.6,0,0,1,10.466,12.763Z" transform="translate(0 0)"/>
+  </g>
+</svg>
