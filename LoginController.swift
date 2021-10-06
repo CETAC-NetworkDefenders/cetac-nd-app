@@ -7,8 +7,6 @@
 
 import UIKit
 
-var access: String? = nil
-
 class LoginController: UIViewController {
     
     var username: String?

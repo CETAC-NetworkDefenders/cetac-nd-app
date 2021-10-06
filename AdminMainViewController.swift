@@ -9,9 +9,9 @@ import UIKit
 
 class AdminMainViewController: UIViewController {
     
-    @IBOutlet var viewContainer: UIView!
-    
     @IBOutlet var viewSwitch: UISegmentedControl!
+    
+    @IBOutlet var viewContainer: UIView!
     
     @IBAction func logout(_ sender: UIButton) {
         performSegue(withIdentifier: "unwindToLogin", sender: self)
@@ -19,11 +19,11 @@ class AdminMainViewController: UIViewController {
     
     @objc private func updateView() {
         if viewSwitch.selectedSegmentIndex == 1 {
-            remove(asChildViewController: staffTableController)
+            remove(asChildViewController: staffListingController)
             add(asChildViewController: reportsController)
         } else {
             remove(asChildViewController: reportsController)
-            add(asChildViewController: staffTableController)
+            add(asChildViewController: staffListingController)
         }
     }
     
@@ -32,7 +32,7 @@ class AdminMainViewController: UIViewController {
         view.addSubview(viewController.view)
         
         viewController.view.frame = viewContainer.frame
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        //viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         viewController.didMove(toParent: self)
     }
@@ -43,10 +43,10 @@ class AdminMainViewController: UIViewController {
         viewController.removeFromParent()
     }
     
-    private lazy var staffTableController: UINavigationController = {
+    private lazy var staffListingController: StaffListingViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-        var viewController = storyboard.instantiateViewController(withIdentifier: "StaffRootView") as! UINavigationController
+        var viewController = storyboard.instantiateViewController(withIdentifier: "StaffRootView") as! StaffListingViewController
 
         self.add(asChildViewController: viewController)
 

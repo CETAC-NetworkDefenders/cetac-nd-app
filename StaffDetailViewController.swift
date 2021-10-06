@@ -17,11 +17,11 @@ class StaffDetailViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        parentRef!.filterStack.isHidden = true
+        parentRef!.stackFilter.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        parentRef!.filterStack.isHidden = false
+        parentRef!.stackFilter.isHidden = false
     }
     
 

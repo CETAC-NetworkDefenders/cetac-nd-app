@@ -9,10 +9,8 @@ import UIKit
 
 class StaffListingViewController: UIViewController {
     
-    @IBOutlet var filterStack: UIStackView!
-    
-    
-    @IBOutlet var filterButton: UIButton!
+
+    @IBOutlet var stackFilter: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
