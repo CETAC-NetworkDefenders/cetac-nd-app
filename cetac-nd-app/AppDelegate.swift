@@ -7,6 +7,10 @@
 
 import UIKit
 
+var globalSelectedTab: Int? = 0
+var services: [ServiceGroup]?
+var access: String? = nil
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

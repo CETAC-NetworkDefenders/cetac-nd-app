@@ -7,17 +7,12 @@
 
 import UIKit
 
-var globalSelectedTab: Int? = 0
-var services: [ServiceGroup]?
-
-
 class MainTabController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         if services == nil {
-            print("Drawing the jsjs")
             do {
                 if let bundlePath = Bundle.main.path(forResource: "services", ofType: "json"),
                     let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
