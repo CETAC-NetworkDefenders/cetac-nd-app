@@ -25,13 +25,38 @@ class StaffSummary: Codable{
     }
 }
 
+struct StaffSection{
+    let letter: String
+    let staffList: [StaffSummary]
+}
+
 class StaffSummaryList: Codable{
-    var staffList: [StaffSummary]?
     
-    func getStaffAt(index: Int) -> String{
-        return staffList![index].getName()
+    var staffList: [StaffSummary]?
+    var staffGroup: [StaffSection]?
+    
+    enum CodingKeys: String, CodingKey {
+        case staffList
+    }
+    
+    func getStaffAt(section: Int, index: Int) -> String{
+        return staffGroup![section].staffList[index].getName()
+    }
+    
+    func buildGroups() -> Void{
+        if staffList == nil{
+            staffGroup = nil
+            return
+        }
+            
+        let groupedStaff = Dictionary(grouping: staffList!, by: {String($0.firstLastName!.prefix(1))})
+        let keys = groupedStaff.keys.sorted()
+        staffGroup = keys.map{StaffSection(letter: $0, staffList: groupedStaff[$0]!) }
+
     }
 }
+
+
 
 class StaffController {
     

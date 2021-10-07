@@ -23,38 +23,46 @@ class StaffListingTableViewController: UITableViewController {
     }
 
     func updateData(accessLevel: String){
+        self.staffSummaryList = nil
+        self.tableView.reloadData()
+
         staffInfoController.fetchListing(accessLevel: accessLevel, completion: { (result) in
             DispatchQueue.main.async {
                 switch result {
-                case .success(let staffList):
-                    self.staffSummaryList = staffList
-                case .failure(let error):
-                    print(error)
-                    self.staffSummaryList = nil
+                    case .success(let staffList):
+                        self.staffSummaryList = staffList
+                        self.staffSummaryList?.buildGroups()
+                        self.tableView.reloadData()
+                    
+                    case .failure(let error):
+                        print(error)
                 }
-                self.tableView.reloadData()
-
             }
         })
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return staffSummaryList == nil ? Int(0) : staffSummaryList!.staffGroup!.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return staffSummaryList == nil ? Int(0) : staffSummaryList!.staffList!.count
+        return staffSummaryList == nil ? Int(0) : staffSummaryList!.staffGroup![section].staffList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "staffCell", for: indexPath)
-        cell.textLabel!.text = staffSummaryList?.getStaffAt(index: indexPath.row)
+        let section = staffSummaryList!.staffGroup![indexPath.section]
+        let name = section.staffList[indexPath.row].getName()
+        cell.textLabel!.text = name
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return staffSummaryList!.staffGroup![section].letter
+    }
 
     /*
     // Override to support conditional editing of the table view.
