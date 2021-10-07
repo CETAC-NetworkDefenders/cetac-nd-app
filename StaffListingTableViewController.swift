@@ -1,24 +1,43 @@
 //
-//  StaffTableViewController.swift
+//  StaffListingTableViewController.swift
 //  cetac-nd-app
 //
-//  Created by Diego Urgell on 05/10/21.
+//  Created by Diego Urgell on 07/10/21.
 //
 
 import UIKit
 
-class StaffTableViewController: UITableViewController {
+class StaffListingTableViewController: UITableViewController {
+    
+    let staffInfoController = StaffController()
+    var staffSummaryList: StaffSummaryList?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
 
+    func updateData(accessLevel: String){
+        staffInfoController.fetchListing(accessLevel: accessLevel, completion: { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let staffList):
+                    self.staffSummaryList = staffList
+                case .failure(let error):
+                    print(error)
+                    self.staffSummaryList = nil
+                }
+                self.tableView.reloadData()
+
+            }
+        })
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -26,19 +45,14 @@ class StaffTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return staffSummaryList == nil ? Int(0) : staffSummaryList!.staffList!.count
     }
 
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "staffCell", for: indexPath)
-        cell.textLabel?.text = "Trial Cell"
-        cell.textLabel?.textColor = UIColor.black
-
+        cell.textLabel!.text = staffSummaryList?.getStaffAt(index: indexPath.row)
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowStaffDetails", sender: self)
     }
     
 

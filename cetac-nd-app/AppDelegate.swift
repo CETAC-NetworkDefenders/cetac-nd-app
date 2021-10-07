@@ -10,6 +10,8 @@ import UIKit
 var globalSelectedTab: Int? = 0
 var services: [ServiceGroup]?
 var access: String? = nil
+let baseURL = "v1z089eb11.execute-api.us-west-2.amazonaws.com"
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

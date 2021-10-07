@@ -1,5 +1,5 @@
 //
-//  StaffListingViewController.swift
+//  AdminMenuViewController.swift
 //  cetac-nd-app
 //
 //  Created by Diego Urgell on 06/10/21.
@@ -7,18 +7,15 @@
 
 import UIKit
 
-class StaffListingViewController: UIViewController {
+class AdminMenuViewController: UIViewController {
 
-    @IBOutlet var accessLevelSelector: UISegmentedControl!
     
     @IBOutlet var containerView: UIView!
     
-    let accessLevels = ["thanatologist", "admin", "admin_support"]
-    
-    private lazy var listingTableController: StaffListingTableViewController = {
+    private lazy var tableController: AdminMenuTableViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-        var viewController = storyboard.instantiateViewController(withIdentifier: "staffListingTable") as! StaffListingTableViewController
+        var viewController = storyboard.instantiateViewController(withIdentifier: "adminMenuTable") as! AdminMenuTableViewController
 
         self.add(asChildViewController: viewController)
 
@@ -27,17 +24,8 @@ class StaffListingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        add(asChildViewController: listingTableController)
-        accessLevelSelector.addTarget(self, action: #selector(updateChildTable), for: .valueChanged)
-        accessLevelSelector.selectedSegmentIndex = 0
-        
-        updateChildTable()
-    }
-    
-    @objc func updateChildTable(){
-        let selectedAccessLevel = accessLevels[accessLevelSelector.selectedSegmentIndex]
-        listingTableController.updateData(accessLevel: selectedAccessLevel)
+        self.navigationItem.hidesBackButton = true
+        add(asChildViewController: tableController)
     }
     
     private func add(asChildViewController viewController: UIViewController) {
@@ -50,6 +38,12 @@ class StaffListingViewController: UIViewController {
         viewController.didMove(toParent: self)
     }
     
+    
+    @IBAction func logout(_ sender: UIButton) {
+        performSegue(withIdentifier: "unwindToLogin", sender: self)
+    }
+    
+
     /*
     // MARK: - Navigation
 
