@@ -80,6 +80,39 @@ class StaffDetail: Codable {
         case neighborhood
         case addressNumber = "address_number"
     }
+}
+
+class StaffNew: Codable {
+    var id: Int?
+    var firstLastname: String?
+    var secondLastname: String?
+    var firstname: String?
+    var accessLevel: String?
+    var cellphone: String?
+    var zipCode: String?
+    var street: String?
+    var neighborhood: String?
+    var addressNumber: Int?
+    var specialty: String?
+    var username: String?
+    var password: String?
+    var salt: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case firstLastname = "first_lastname"
+        case secondLastname = "second_lastname"
+        case firstname
+        case cellphone
+        case zipCode = "zip_code"
+        case street
+        case neighborhood
+        case addressNumber = "address_number"
+        case accessLevel = "access_level"
+        case username
+        case password
+        case salt
+    }
 
 }
 
@@ -154,7 +187,35 @@ class StaffController {
             if let httpStatus = response as? HTTPURLResponse {
                 if  httpStatus.statusCode != 200 {
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print(response!)
+                    completion()
+                }
+                else {
+                    completion()
+                }
+            }
+            else if let error = error {
+                print(error)
+                completion()
+            }
+        }.resume()
+    }
+    
+    func createStaff(staff: StaffNew, completion: @escaping () -> Void){
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try? jsonEncoder.encode(staff)
+        
+        urlComponents.queryItems = nil
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = "POST"
+        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let httpStatus = response as? HTTPURLResponse {
+                if  httpStatus.statusCode != 200 {
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
                     completion()
                 }
                 else {

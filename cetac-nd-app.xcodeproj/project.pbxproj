@@ -20,6 +20,7 @@
 		6D6B394426E7C85C008DBC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6B394226E7C85C008DBC5E /* Main.storyboard */; };
 		6D6B394626E7C85D008DBC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6B394526E7C85D008DBC5E /* Assets.xcassets */; };
 		6D6B394926E7C85D008DBC5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6B394726E7C85D008DBC5E /* LaunchScreen.storyboard */; };
+		6DE77A4F27109DC000687078 /* CreateStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE77A4E27109DC000687078 /* CreateStaffViewController.swift */; };
 		6DF85E36270EAD5500BCA266 /* AdminMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF85E35270EAD5500BCA266 /* AdminMenuViewController.swift */; };
 		6DF85E38270EAEE300BCA266 /* AdminMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF85E37270EAEE300BCA266 /* AdminMenuTableViewController.swift */; };
 		6DF85E3A270EBB7500BCA266 /* StaffListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF85E39270EBB7500BCA266 /* StaffListingTableViewController.swift */; };
@@ -43,6 +44,7 @@
 		6D6B394526E7C85D008DBC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D6B394826E7C85D008DBC5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D6B394A26E7C85D008DBC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DE77A4E27109DC000687078 /* CreateStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStaffViewController.swift; sourceTree = "<group>"; };
 		6DF85E35270EAD5500BCA266 /* AdminMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenuViewController.swift; sourceTree = "<group>"; };
 		6DF85E37270EAEE300BCA266 /* AdminMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMenuTableViewController.swift; sourceTree = "<group>"; };
 		6DF85E39270EBB7500BCA266 /* StaffListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListingTableViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				6DF85E35270EAD5500BCA266 /* AdminMenuViewController.swift */,
 				6DF85E37270EAEE300BCA266 /* AdminMenuTableViewController.swift */,
 				6DF85E39270EBB7500BCA266 /* StaffListingTableViewController.swift */,
+				6DE77A4E27109DC000687078 /* CreateStaffViewController.swift */,
 			);
 			name = AdminViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				6DF85E3A270EBB7500BCA266 /* StaffListingTableViewController.swift in Sources */,
 				6D06CDF5270AE43B004CF4A7 /* Service.swift in Sources */,
 				6D06CDF9270B4AD8004CF4A7 /* ServiceInformationControlller.swift in Sources */,
+				6DE77A4F27109DC000687078 /* CreateStaffViewController.swift in Sources */,
 				6D06CDEE270AD3B8004CF4A7 /* MainTabController.swift in Sources */,
 				6DF85E38270EAEE300BCA266 /* AdminMenuTableViewController.swift in Sources */,
 				6DF85E36270EAD5500BCA266 /* AdminMenuViewController.swift in Sources */,

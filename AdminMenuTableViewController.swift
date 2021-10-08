@@ -23,6 +23,9 @@ class AdminMenuTableViewController: UITableViewController {
             if indexPath.row == 0 {
                 container!.performSegue(withIdentifier: "showStaffListing", sender: container)
             }
+            if indexPath.row == 1 {
+                container!.performSegue(withIdentifier: "showStaffCreation", sender: container)
+            }
         }
 
     }

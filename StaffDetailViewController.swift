@@ -39,7 +39,6 @@ class StaffDetailViewController: UIViewController {
                 switch result {
                     case .success(let staffRes):
                         self.staff = staffRes
-                        print(staffRes.addressNumber!)
                         self.fillData()
                     
                     case .failure(let error):
@@ -47,6 +46,10 @@ class StaffDetailViewController: UIViewController {
                 }
             }
         })
+        
+        //Looks for single or multiple taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -62,10 +65,9 @@ class StaffDetailViewController: UIViewController {
                 staffInfoController.updateStaff(staff: staff!, completion: { 
                     DispatchQueue.main.async {
                         self.tempStaff = nil
+                        print("Successfully updated staff")
                     }
                 })
-            } else {
-                // show Alert
             }
             navigationItem.title = NSLocalizedString("Detalle Staff", comment: "Detalle Staff")
             navigationItem.leftBarButtonItem = nil
@@ -114,5 +116,11 @@ class StaffDetailViewController: UIViewController {
         zipCodeField.isUserInteractionEnabled = !zipCodeField.isUserInteractionEnabled
         numberField.isUserInteractionEnabled = !numberField.isUserInteractionEnabled
         specialtyField.isUserInteractionEnabled = !specialtyField.isUserInteractionEnabled
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }
