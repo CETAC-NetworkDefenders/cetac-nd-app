@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StaffSummary: Codable{
+class StaffSummary: Codable {
     var id: Int?
     var firstName: String?
     var firstLastName: String?
