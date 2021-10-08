@@ -2,7 +2,7 @@
 //  Session.swift
 //  cetac-nd-app
 //
-//  Created by user197499 on 10/7/21.
+//  Created by Iñigo Zepeda on 10/7/21.
 //
 
 import Foundation
@@ -34,6 +34,7 @@ class SessionSummaryList: Codable {
 }
 
 class SessionController {
+    
     func fetchListing(accessLevel: String, completion: @escaping (Result<SessionSummaryList, Error>) -> Void){
         
         var urlComponents = URLComponents()

@@ -2,13 +2,18 @@
 //  SessionTableViewController.swift
 //  cetac-nd-app
 //
-//  Created by user197499 on 10/7/21.
+//  Created by Iñigo Zepeda on 10/7/21.
 //
 
 import UIKit
 
 class SessionTableViewController: UITableViewController {
-
+    
+    let sessionInfoController = SessionController()
+    //Permte hacer peticiones
+    var sessionSummaryList: SessionSummaryList?
+    //Permite almancenar respuesta de las peticiones
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +25,25 @@ class SessionTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    func updateData(accessLevel: String){
+        self.sessionSummaryList = nil
+        self.tableView.reloadData()
+
+        sessionInfoController.fetchListing(accessLevel: accessLevel, completion: { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                    case .success(let sessionList):
+                        self.sessionSummaryList = sessionList
+                        //self.staffSummaryList?.buildGroups()
+                        self.tableView.reloadData()
+                    
+                    case .failure(let error):
+                        print(error)
+                }
+            }
+        })
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -28,8 +52,17 @@ class SessionTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return sessionSummaryList == nil ? Int(0) : sessionSummaryList!.[section].sessionList.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath)
+        let section = sessionSummaryList!.[indexPath.section]
+        let name = section.sessionList[indexPath.row].getName()
+        cell.textLabel!.text = name
+        return cell
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
