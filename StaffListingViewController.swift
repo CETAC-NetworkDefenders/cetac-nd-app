@@ -10,17 +10,24 @@ import UIKit
 class StaffListingViewController: UIViewController {
 
     @IBOutlet var accessLevelSelector: UISegmentedControl!
-    
     @IBOutlet var containerView: UIView!
     
     let accessLevels = ["thanatologist", "admin", "admin_support"]
+    let staffInfoController = StaffController()
+    var selectedStaffId: Int?
     
     private lazy var listingTableController: StaffListingTableViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
         var viewController = storyboard.instantiateViewController(withIdentifier: "staffListingTable") as! StaffListingTableViewController
+        
+        addChild(viewController)
+        view.addSubview(viewController.view)
+        
+        viewController.view.frame = containerView.frame
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-        self.add(asChildViewController: viewController)
+        viewController.didMove(toParent: self)
 
         return viewController
     }()
@@ -28,7 +35,6 @@ class StaffListingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        add(asChildViewController: listingTableController)
         accessLevelSelector.addTarget(self, action: #selector(updateChildTable), for: .valueChanged)
         accessLevelSelector.selectedSegmentIndex = 0
         
@@ -39,25 +45,12 @@ class StaffListingViewController: UIViewController {
         let selectedAccessLevel = accessLevels[accessLevelSelector.selectedSegmentIndex]
         listingTableController.updateData(accessLevel: selectedAccessLevel)
     }
-    
-    private func add(asChildViewController viewController: UIViewController) {
-        addChild(viewController)
-        view.addSubview(viewController.view)
-        
-        viewController.view.frame = containerView.frame
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
-        viewController.didMove(toParent: self)
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is StaffDetailViewController {
+            let vc = segue.destination as? StaffDetailViewController
+            vc?.selectedStaffId = self.selectedStaffId
+        }
     }
-    */
 
 }

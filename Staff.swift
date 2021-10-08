@@ -56,19 +56,49 @@ class StaffSummaryList: Codable{
     }
 }
 
+class StaffDetail: Codable {
+    var id: Int?
+    var firstLastname: String?
+    var secondLastname: String?
+    var firstname: String?
+    var accessLevel: String?
+    var cellphone: String?
+    var zipCode: String?
+    var street: String?
+    var neighborhood: String?
+    var addressNumber: Int?
+    var specialty: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case firstLastname = "first_lastname"
+        case secondLastname = "second_lastname"
+        case firstname
+        case cellphone
+        case zipCode = "zip_code"
+        case street
+        case neighborhood
+        case addressNumber = "address_number"
+    }
 
+}
 
 class StaffController {
     
-    func fetchListing(accessLevel: String, completion: @escaping (Result<StaffSummaryList, Error>) -> Void){
-        
-        var urlComponents = URLComponents()
+    var urlComponents: URLComponents
+    
+    init() {
+        urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = baseURL
         urlComponents.path = "/default/staff"
+    }
+    
+    func fetchListing(accessLevel: String, completion: @escaping (Result<StaffSummaryList, Error>) -> Void){
+        
         urlComponents.queryItems = [
             URLQueryItem(name: "listing", value: "listing"),
-            URLQueryItem(name: "accessLevel", value: accessLevel)
+            URLQueryItem(name: "access_level", value: accessLevel)
         ]
         
         URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
@@ -83,4 +113,59 @@ class StaffController {
             }
         }.resume()
     }
+    
+    func fetchDetail(staffId: Int, completion: @escaping (Result<StaffDetail, Error>) -> Void) {
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "staff_id", value: String(staffId))
+        ]
+        
+        URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
+            let jsonDecoder = JSONDecoder()
+
+            if let data = data{
+                do{
+                    let staffDetailRes = try jsonDecoder.decode(StaffDetail.self, from: data)
+                    completion(.success(staffDetailRes))
+                } catch {
+                    print(error)
+                }
+            }
+            else if let error = error {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+    
+    func updateStaff(staff: StaffDetail, completion: @escaping () -> Void) {
+        
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try? jsonEncoder.encode(staff)
+
+        urlComponents.queryItems = nil
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = "PATCH"
+        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpBody = jsonData
+
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let httpStatus = response as? HTTPURLResponse {
+                if  httpStatus.statusCode != 200 {
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print(response!)
+                    completion()
+                }
+                else {
+                    completion()
+                }
+            }
+            else if let error = error {
+                print(error)
+                completion()
+            }
+        }.resume()
+    }
+    
 }

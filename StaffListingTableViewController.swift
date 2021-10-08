@@ -11,9 +11,13 @@ class StaffListingTableViewController: UITableViewController {
     
     let staffInfoController = StaffController()
     var staffSummaryList: StaffSummaryList?
+    var container: StaffListingViewController?
+    var accessLevel: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        container = self.parent as? StaffListingViewController
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -21,8 +25,13 @@ class StaffListingTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateData(accessLevel: accessLevel!)
+    }
 
     func updateData(accessLevel: String){
+        self.accessLevel = accessLevel
         self.staffSummaryList = nil
         self.tableView.reloadData()
 
@@ -64,6 +73,13 @@ class StaffListingTableViewController: UITableViewController {
         return staffSummaryList!.staffGroup![section].letter
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = staffSummaryList!.staffGroup![indexPath.section]
+        let id = section.staffList[indexPath.row].id
+        container!.selectedStaffId = id
+        container?.performSegue(withIdentifier: "showStaffDetail", sender: container)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
