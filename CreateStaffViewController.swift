@@ -11,21 +11,26 @@ class CreateStaffViewController: UIViewController {
     
     var staff: StaffNew = StaffNew()
     let staffInfoController = StaffController()
+    
+    let accessLevelValues = ["", "thanatologist", "admin", "admin_support"]
+    let accessLevelOptions = ["", "Tanatólogo", "Admin", "Soporte"]
 
     @IBOutlet var firstnameField: UITextField!
     @IBOutlet var firstLastnameField: UITextField!
     @IBOutlet var secondLastnameField: UITextField!
-    @IBOutlet var usernameField: UITextField!
+    @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var cellphoneField: UITextField!
     @IBOutlet var neighborhoodField: UITextField!
     @IBOutlet var streetField: UITextField!
     @IBOutlet var zipCodeField: UITextField!
     @IBOutlet var numberField: UITextField!
-    @IBOutlet var accessLevelField: UITextField!
     @IBOutlet var specialtyField: UITextView!
+    @IBOutlet var accessLevelField: UIPickerView!
     
-    let alertSuccess = UIAlertController(title: "Datos incompletos", message: "Se necesita el usuario y la contraseña para iniciar sesión.", preferredStyle: .alert)
+    let alertSuccess = UIAlertController(title: "Staff agregado", message: "El nuevo staff se ha agregado a la base de datos. Debe proporcionarle la contraseña de acceso para que pueda cambiarla e iniciar sesión.", preferredStyle: .alert)
+    
+    let validationError = UIAlertController(title: "Datos no válidos", message:"", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +40,8 @@ class CreateStaffViewController: UIViewController {
         firstnameField.text = ""
         firstLastnameField.text = ""
         secondLastnameField.text = ""
+        emailField.text = ""
+        passwordField.text = ""
         cellphoneField.text = ""
         neighborhoodField.text = ""
         streetField.text = ""
@@ -42,13 +49,14 @@ class CreateStaffViewController: UIViewController {
         numberField.text = ""
         specialtyField.text = ""
         
-        
-        //Looks for single or multiple taps.
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        alertData.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-
+        alertSuccess.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        validationError.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        accessLevelField.delegate = self
+        accessLevelField.dataSource = self
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -57,52 +65,79 @@ class CreateStaffViewController: UIViewController {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(createButtonTrigger))
         } else {
             navigationItem.rightBarButtonItem = nil
-            
         }
     }
     
     @objc func createButtonTrigger() -> Void{
-        updateModel()
-        
-        staffInfoController.createStaff(staff: staff, completion: {
-            DispatchQueue.main.async {
-                print("Successfully added staff")
-            }
-        })
-        
-        setEditing(false, animated: true)
+        view.endEditing(true)
+        self.updateModel()
+        let validation = self.staff.isValid()
+        if validation != nil {
+            self.validationError.message = validation
+            self.present(self.validationError, animated: true)
+        }
+        else{
+            self.staff.makeSecure()
+            staffInfoController.createStaff(staff: staff, completion: {
+                DispatchQueue.main.async {
+                    self.present(self.alertSuccess, animated: true)
+                    self.disableEdit()
+                }
+            })
+            setEditing(false, animated: true)
+        }
     }
     
     func updateModel(){
-        staff.firstname = firstnameField.text
-        staff.firstLastname = firstLastnameField.text
-        staff.secondLastname = secondLastnameField.text
+        staff.firstname = firstnameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        staff.firstLastname = firstLastnameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        staff.secondLastname = secondLastnameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         staff.cellphone = cellphoneField.text
         staff.neighborhood = neighborhoodField.text
         staff.street = streetField.text
         staff.zipCode = zipCodeField.text
-        staff.addressNumber = Int(numberField.text!)!
+        staff.addressNumber = numberField.text
         staff.specialty = specialtyField.text
-        staff.accessLevel = accessLevelField.text
-        staff.username = usernameField.text
-        staff.password = "db124066384060b7c132c51e3606338811a99912761eaf973dea64c4f1214c1a"
-        staff.salt = "c3d4e5f6g7h8i9j0"
+        staff.email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        staff.password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    //Calls this function when the tap is recognized.
+    func disableEdit(){
+        firstnameField.isUserInteractionEnabled = false
+        firstLastnameField.isUserInteractionEnabled = false
+        secondLastnameField.isUserInteractionEnabled = false
+        cellphoneField.isUserInteractionEnabled = false
+        neighborhoodField.isUserInteractionEnabled = false
+        streetField.isUserInteractionEnabled = false
+        zipCodeField.isUserInteractionEnabled = false
+        numberField.isUserInteractionEnabled = false
+        specialtyField.isUserInteractionEnabled = false
+        emailField.isUserInteractionEnabled = false
+        passwordField.isUserInteractionEnabled = false
+        accessLevelField.isUserInteractionEnabled = false
+    }
+
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension CreateStaffViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return accessLevelOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return accessLevelOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.staff.accessLevel = accessLevelValues[row]
+    }
 }

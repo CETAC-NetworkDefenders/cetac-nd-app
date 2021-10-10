@@ -9,7 +9,7 @@ import UIKit
 
 var globalSelectedTab: Int? = 0
 var services: [ServiceGroup]?
-var access: String? = nil
+var currentSession: CurrentStaff? 
 let baseURL = "v1z089eb11.execute-api.us-west-2.amazonaws.com"
 
 

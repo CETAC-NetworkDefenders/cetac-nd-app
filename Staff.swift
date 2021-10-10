@@ -80,10 +80,24 @@ class StaffDetail: Codable {
         case neighborhood
         case addressNumber = "address_number"
     }
+    
+    func isValid() -> String? {
+        if self.cellphone!.range(of:#"\d{10}"#, options: .regularExpression) == nil{
+            return "El número celular es incorrecto. Deben ser 10 digitos."
+        }
+        else if self.zipCode!.range(of:#"\d{5}"#, options: .regularExpression) == nil{
+            return "El código postal es incorrecto. Deben ser 5 digitos."
+        }
+        else if self.addressNumber == nil {
+            return "El número de la dirección es incorrecto. Debe tener de 1 a 5 digitos."
+        }
+        
+        return nil
+    }
 }
 
 class StaffNew: Codable {
-    var id: Int?
+    
     var firstLastname: String?
     var secondLastname: String?
     var firstname: String?
@@ -92,14 +106,13 @@ class StaffNew: Codable {
     var zipCode: String?
     var street: String?
     var neighborhood: String?
-    var addressNumber: Int?
+    var addressNumber: String?
     var specialty: String?
-    var username: String?
+    var email: String?
     var password: String?
     var salt: String?
     
     enum CodingKeys: String, CodingKey {
-        case id
         case firstLastname = "first_lastname"
         case secondLastname = "second_lastname"
         case firstname
@@ -109,9 +122,50 @@ class StaffNew: Codable {
         case neighborhood
         case addressNumber = "address_number"
         case accessLevel = "access_level"
-        case username
+        case email = "username"
         case password
         case salt
+    }
+    
+    func isValid() -> String? { // returns nil if the staff is completely valid
+        
+        if self.cellphone!.range(of:#"\d{10}"#, options: .regularExpression) == nil{
+            return "El número celular es incorrecto. Deben ser 10 digitos."
+        }
+        else if self.zipCode!.range(of:#"\d{5}"#, options: .regularExpression) == nil{
+            return "El código postal es incorrecto. Deben ser 5 digitos."
+        }
+        else if self.addressNumber!.range(of:#"\d{1,5}"#, options: .regularExpression) == nil{
+            return "El número de la dirección es incorrecto. Debe tener de 1 a 5 digitos."
+        }
+        else if self.email!.range(of:#"\S+@\S+\.\S+"#, options: .regularExpression) == nil{
+            return "El correo electrónico es incorrecto."
+        }
+        else if self.password!.range(of:#"(?=.{8,})"#, options: .regularExpression) == nil{
+            return "La contraseña debe tener al menos 8 caracteres."
+        }
+        else if self.password!.range(of:#"(?=.*[A-Z])"#, options: .regularExpression) == nil{
+            return "La contraseña debe tener al menos una mayuscula."
+        }
+        else if self.password!.range(of:#"(?=.*[a-z])"#, options: .regularExpression) == nil{
+            return "La contraseña debe tener al menos una minuscula."
+        }
+        else if self.password!.range(of:#"(?=.*\d)"#, options: .regularExpression) == nil{
+            return "La contraseña debe tener al menos un digito."
+        }
+        else if self.password!.range(of:#"(?=.*[$%&?._-])"#, options: .regularExpression) == nil{
+            return "La contraseña debe tener al menos un carácter especial ($%&?._-)."
+        }
+        else if self.accessLevel == "" {
+            return "Seleccione un nivel de acceso"
+        }
+        
+        return nil
+    }
+    
+    func makeSecure(){
+        self.salt = SecurityUtils.getSalt()
+        self.password = SecurityUtils.hashPassword(clearTextPassword: self.password!, salt: self.salt!)
     }
 
 }

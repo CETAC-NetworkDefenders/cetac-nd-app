@@ -30,6 +30,12 @@ class StaffDetailViewController: UIViewController {
     @IBOutlet var numberField: UITextField!
     @IBOutlet var specialtyField: UITextView!
     
+    let alertSuccess = UIAlertController(title: "Staff actualizado", message: "La información del Staff se ha actualizado en la base de datos.", preferredStyle: .alert)
+    
+    let validationError = UIAlertController(title: "Datos no válidos", message:"", preferredStyle: .alert)
+    
+    let authenticationError = UIAlertController(title: "Permiso denegado", message:"Su rol de acceso es Soporte de Administración, por lo que no puede editar la información. Comuniquese con un administrador CETAC.", preferredStyle: .alert)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -50,24 +56,45 @@ class StaffDetailViewController: UIViewController {
         //Looks for single or multiple taps.
          let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        alertSuccess.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        validationError.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        authenticationError.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        self.toggleEdit()
+        
         if editing {
+            if currentSession?.accessLevel == "admin_support"{
+                cancelButtonTrigger()
+                self.present(self.authenticationError, animated: true)
+                return
+            }
+            
+            super.setEditing(editing, animated: animated)
+            self.toggleEdit()
             self.tempStaff = staff
             navigationItem.title = NSLocalizedString("Editar Staff", comment: "Editar staff")
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTrigger))
+            
         } else {
             if tempStaff != nil { // If not already erased, means it was not canceled
                 self.updateModel()
-                staffInfoController.updateStaff(staff: staff!, completion: { 
-                    DispatchQueue.main.async {
-                        self.tempStaff = nil
-                        print("Successfully updated staff")
-                    }
-                })
+                let valid = self.staff!.isValid()
+                if valid == nil{
+                    staffInfoController.updateStaff(staff: staff!, completion: {
+                        DispatchQueue.main.async {
+                            self.tempStaff = nil
+                            self.present(self.alertSuccess, animated: animated)
+                        }
+                    })
+                    super.setEditing(editing, animated: animated)
+                    self.toggleEdit()
+                }
+                else{
+                    self.validationError.message = valid
+                    self.present(self.validationError, animated: animated)
+                }
             }
             navigationItem.title = NSLocalizedString("Detalle Staff", comment: "Detalle Staff")
             navigationItem.leftBarButtonItem = nil
@@ -89,7 +116,7 @@ class StaffDetailViewController: UIViewController {
         staff?.neighborhood = neighborhoodField.text
         staff?.street = streetField.text
         staff?.zipCode = zipCodeField.text
-        staff?.addressNumber! = Int(numberField.text!)!
+        staff?.addressNumber = Int(numberField.text!)
         staff?.specialty = specialtyField.text
     }
     
