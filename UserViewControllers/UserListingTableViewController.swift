@@ -8,36 +8,55 @@
 import UIKit
 
 class UserListingTableViewController: UITableViewController {
+    
+    let userInfoController = UserController()
+    var userSummaryList: UserSummaryList?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        updateData(staffId: "1")
     }
 
     // MARK: - Table view data source
 
+    func updateData(staffId: String) {
+        self.userSummaryList = nil;
+        self.tableView.reloadData()
+        print("Updating data")
+        userInfoController.fetchListing(staffId: staffId, completition: { (result) in DispatchQueue.main.async {
+                switch result {
+                    case.success(let userList):
+                        self.userSummaryList = userList
+                        self.userSummaryList?.buildGroups()
+                        self.tableView.reloadData()
+                        print("Updated")
+                    case.failure(let error):
+                        print(error)
+                    }
+                }
+        })
+    }
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return userSummaryList == nil ? Int(0) : userSummaryList!.userGroup!.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return userSummaryList == nil ? Int(0) : userSummaryList!.userGroup![section].userList.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
-
-        cell.textLabel?.text = "Sample Cell"
-
+        let section = userSummaryList!.userGroup![indexPath.section]
+        let name = section.userList[indexPath.row].getName()
+        cell.textLabel!.text = name
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return userSummaryList!.userGroup![section].letter
     }
     
 
