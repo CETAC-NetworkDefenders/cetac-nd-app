@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserDetailViewController: UIViewController {
+class UserDetailViewController2: UIViewController {
 
     var user: UserDetail?
     var tempUser: UserDetail?
