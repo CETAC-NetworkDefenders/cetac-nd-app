@@ -144,7 +144,7 @@ class StaffDetailViewController: UIViewController {
         numberField.isUserInteractionEnabled = !numberField.isUserInteractionEnabled
         specialtyField.isUserInteractionEnabled = !specialtyField.isUserInteractionEnabled
     }
-    
+
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.

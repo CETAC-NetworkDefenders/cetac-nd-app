@@ -26,6 +26,9 @@ class CurrentStaff: Codable {
 class AuthenticationController {
     
     var urlComponents: URLComponents
+    let group = DispatchGroup()
+    var salt: Salt?
+    var staff: CurrentStaff?
     
     init() {
         urlComponents = URLComponents()
@@ -69,5 +72,48 @@ class AuthenticationController {
                 completion(.failure(error))
             }
         }.resume()
+    }
+    
+    func authenticate(email: String, password: String) -> CurrentStaff? {
+        self.salt = Salt()
+
+        // First obtain the salt, enter the Dispatch Group to wait for the request to finish.
+        self.group.enter()
+        self.fetchSalt(email: email, completion: { (result) in
+            DispatchQueue.global().async {
+                switch result {
+                    case .success(let saltRes):
+                        self.salt = saltRes
+                    
+                    case .failure(let error):
+                        print(error)
+                }
+                self.group.leave()
+            }
+        })
+        self.group.wait()
+        
+        // If user is not found, credentials are wrong
+        if salt!.salt != nil{
+            // Otherwise, hash the password using the received salt and send the id and password
+            let securedPassword = SecurityUtils.hashPassword(clearTextPassword: password, salt: salt!.salt!)
+
+            // Then make the request to get the user id and the access_level, but once again enter Dispatch Group.
+            self.group.enter()
+            self.authenticateStaff(id: salt!.id!, hashedPassword: securedPassword, completion: { (result) in
+                DispatchQueue.global().async {
+                    switch result {
+                        case .success(let staffRes):
+                            self.staff = staffRes
+                        
+                        case .failure(let error):
+                            print(error)
+                    }
+                    self.group.leave()
+                }
+            })
+        }
+        self.group.wait()
+        return self.staff
     }
 }

@@ -1,13 +1,15 @@
 //
-//  ThanatologistMainViewController.swift
+//  UserInformationViewController.swift
 //  cetac-nd-app
 //
-//  Created by Diego Urgell on 05/10/21.
+//  Created by Diego Urgell on 10/10/21.
 //
 
 import UIKit
 
-class ThanatologistMainViewController: UIViewController {
+class UserInformationViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

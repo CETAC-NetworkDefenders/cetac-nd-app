@@ -278,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmi-HY-HSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="593"/>
+            <point key="canvasLocation" x="535" y="569"/>
         </scene>
         <!--Visualizar Staff-->
         <scene sceneID="o8K-7M-VnM">
@@ -321,7 +321,208 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3T-A0-I3o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464" y="-273"/>
+            <point key="canvasLocation" x="1416" y="-258"/>
+        </scene>
+        <!--Thanatologist Menu Table View Controller-->
+        <scene sceneID="fL5-rx-6xj">
+            <objects>
+                <tableViewController storyboardIdentifier="thanatologistMenuTable" id="DiZ-BH-c3Z" customClass="ThanatologistMenuTableViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="bgv-LC-Zhp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Sesiones" id="xia-Ct-9Fb">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="DWB-So-e1F" style="IBUITableViewCellStyleDefault" id="l83-pF-E1b">
+                                        <rect key="frame" x="0.0" y="49.5" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l83-pF-E1b" id="C4l-xy-PM4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Mis usuarios" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DWB-So-e1F">
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.80000000000000004"/>
+                                        </tableViewCellContentView>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.94999999999999996"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ZDr-nZ-Dzs" style="IBUITableViewCellStyleDefault" id="lIh-Rd-e4J">
+                                        <rect key="frame" x="0.0" y="93" width="320" height="61.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lIh-Rd-e4J" id="eDp-zb-ZA6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Crear sesión con usuario de otro tanatólogo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZDr-nZ-Dzs">
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="61.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Usuarios" id="7yg-lu-BNt">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="QOn-fn-66U" style="IBUITableViewCellStyleDefault" id="UcY-7k-umk">
+                                        <rect key="frame" x="0.0" y="204.5" width="320" height="61.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UcY-7k-umk" id="syq-ia-hBT">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Registrar un nuevo usuario (nuevo expediente)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QOn-fn-66U">
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="61.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.94999999999999996"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="djt-mO-aYj" style="IBUITableViewCellStyleDefault" id="oXd-aM-MRe">
+                                        <rect key="frame" x="0.0" y="266" width="320" height="61.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oXd-aM-MRe" id="BVx-Pc-QT1">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Seguimiento de un usuario anterior (reabrir expediente)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="djt-mO-aYj">
+                                                    <rect key="frame" x="16" y="0.0" width="288" height="61.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="DiZ-BH-c3Z" id="8OY-7f-IfX"/>
+                            <outlet property="delegate" destination="DiZ-BH-c3Z" id="wGp-i4-3xW"/>
+                        </connections>
+                    </tableView>
+                    <size key="freeformSize" width="320" height="456"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yyc-5u-lrH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-984" y="1110"/>
+        </scene>
+        <!--Nuevo Usuario-->
+        <scene sceneID="OkI-Ek-unG">
+            <objects>
+                <viewController id="0Bc-gj-Rf9" customClass="CreateUserViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ol-Tl-Wwn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aqui pones lo necesario para crear usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gG-4s-RUp">
+                                <rect key="frame" x="46" y="438" width="323" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vm0-km-DQ6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nuevo Usuario" id="Pp9-zP-HC1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3N-TS-EQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="532" y="1840"/>
+        </scene>
+        <!--Session Listing Table View Controller-->
+        <scene sceneID="2gu-zM-1el">
+            <objects>
+                <tableViewController storyboardIdentifier="sessionTableViewController" id="hSs-A3-Oes" customClass="SessionListingTableViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="eaY-FE-Bum">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sessionCell" id="a2v-ue-aES">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a2v-ue-aES" id="8mz-HK-u0L">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="WdE-Bv-wbs" kind="show" id="u5t-oo-AWb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hSs-A3-Oes" id="0eu-oB-Ex1"/>
+                            <outlet property="delegate" destination="hSs-A3-Oes" id="GKW-h6-YjM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="08E-Xl-d8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2233" y="1476"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H87-4K-ZLB">
+            <objects>
+                <viewController id="WdE-Bv-wbs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cd0-YB-5rB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui irá la vista de cada sesión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyz-d4-j3v">
+                                <rect key="frame" x="90.5" y="410.5" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TQl-Wg-oxg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dyz-d4-j3v" firstAttribute="centerX" secondItem="cd0-YB-5rB" secondAttribute="centerX" id="hBb-vw-Kzg"/>
+                            <constraint firstItem="Dyz-d4-j3v" firstAttribute="centerY" secondItem="cd0-YB-5rB" secondAttribute="centerY" id="jPY-Gl-hS1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8yQ-hZ-au3"/>
+                    <size key="freeformSize" width="414" height="896"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FHo-1p-btJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3064" y="1476"/>
+        </scene>
+        <!--Reabir Expediente-->
+        <scene sceneID="kW4-gU-byZ">
+            <objects>
+                <viewController id="uUe-yc-E1N" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yJZ-Rg-D1L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7Ve-2X-0h8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reabir Expediente" id="Uro-Xf-Fuv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7e-fM-abW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-300" y="1840"/>
         </scene>
         <!--Tanatólogo-->
         <scene sceneID="NPN-L3-ihx">
@@ -331,25 +532,163 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vista del tanatólogo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctb-cp-PyT">
-                                <rect key="frame" x="131" y="437.5" width="152" height="21"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UqP-Mc-DzS" userLabel="SessionStack">
+                                <rect key="frame" x="25" y="108" width="364" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola, Admin!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iu-x6-Fgu">
+                                        <rect key="frame" x="0.0" y="3.5" width="111.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvc-RA-aO9">
+                                        <rect key="frame" x="251.5" y="0.0" width="112.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Cerrar Sesión"/>
+                                        <connections>
+                                            <action selector="logout:" destination="riX-AS-byI" eventType="touchUpInside" id="jHV-ur-3st"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDv-Ut-PCm">
+                                <rect key="frame" x="25" y="159" width="339" height="634"/>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MRM-GG-JoS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RDv-Ut-PCm" firstAttribute="top" secondItem="UqP-Mc-DzS" secondAttribute="bottom" constant="20" id="PWz-nU-mS4"/>
+                            <constraint firstItem="MRM-GG-JoS" firstAttribute="bottom" secondItem="RDv-Ut-PCm" secondAttribute="bottom" constant="20" id="RW2-Mr-smY"/>
+                            <constraint firstItem="RDv-Ut-PCm" firstAttribute="leading" secondItem="MRM-GG-JoS" secondAttribute="leading" constant="25" id="Ve3-Sn-8yu"/>
+                            <constraint firstItem="UqP-Mc-DzS" firstAttribute="top" secondItem="MRM-GG-JoS" secondAttribute="top" constant="20" id="p8S-eg-9hE"/>
+                            <constraint firstItem="MRM-GG-JoS" firstAttribute="trailing" secondItem="UqP-Mc-DzS" secondAttribute="trailing" constant="25" id="uK5-4v-6nK"/>
+                            <constraint firstItem="UqP-Mc-DzS" firstAttribute="leading" secondItem="MRM-GG-JoS" secondAttribute="leading" constant="25" id="wOW-vy-PBr"/>
+                            <constraint firstItem="MRM-GG-JoS" firstAttribute="trailing" secondItem="RDv-Ut-PCm" secondAttribute="trailing" constant="50" id="xTf-wc-5EW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tanatólogo" id="b9O-aV-inQ"/>
+                    <connections>
+                        <outlet property="containerView" destination="RDv-Ut-PCm" id="jDH-Ox-Fgb"/>
+                        <outlet property="helloLabel" destination="7iu-x6-Fgu" id="OTq-oN-dMe"/>
+                        <segue destination="pwb-1q-EqT" kind="show" identifier="showUserListing" id="6Qq-Rj-V6X"/>
+                        <segue destination="0Bc-gj-Rf9" kind="show" identifier="showNewUser" id="DRx-Pi-oXA"/>
+                        <segue destination="uUe-yc-E1N" kind="show" identifier="showOpenRecord" id="hFI-lF-MKd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qnf-KH-rcc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-300" y="1110"/>
+        </scene>
+        <!--Mis usuarios-->
+        <scene sceneID="icZ-Vs-3ZS">
+            <objects>
+                <tableViewController id="pwb-1q-EqT" customClass="UserListingTableViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Jis-N8-CpM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" textLabel="EmL-gU-xYJ" style="IBUITableViewCellStyleDefault" id="MHx-bR-XSz">
+                                <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MHx-bR-XSz" id="UE3-8w-mYN">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Usuario de ejemplo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EmL-gU-xYJ">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="E03-zz-Wgc" kind="show" id="6hN-wh-abf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pwb-1q-EqT" id="Ulg-gw-shP"/>
+                            <outlet property="delegate" destination="pwb-1q-EqT" id="xEN-94-YJM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mis usuarios" id="BhP-1G-pdB"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kVG-YF-ah3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="1110"/>
+        </scene>
+        <!--Detalle Usuario-->
+        <scene sceneID="pJy-xJ-DjH">
+            <objects>
+                <viewController id="E03-zz-Wgc" customClass="UserDetailViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1qX-SI-rj6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="keT-Qr-ij0">
+                                <rect key="frame" x="25" y="118" width="364" height="32"/>
+                                <segments>
+                                    <segment title="Información del usuario"/>
+                                    <segment title="Sesiones"/>
+                                </segments>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8LB-Hd-pfs">
+                                <rect key="frame" x="25" y="179" width="339" height="614"/>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qwv-il-Rwt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="keT-Qr-ij0" firstAttribute="leading" secondItem="qwv-il-Rwt" secondAttribute="leading" constant="25" id="CkJ-Wo-dDY"/>
+                            <constraint firstItem="8LB-Hd-pfs" firstAttribute="leading" secondItem="qwv-il-Rwt" secondAttribute="leading" constant="25" id="Jd5-mw-G7I"/>
+                            <constraint firstItem="qwv-il-Rwt" firstAttribute="bottom" secondItem="8LB-Hd-pfs" secondAttribute="bottom" constant="20" id="Kla-QA-4nK"/>
+                            <constraint firstItem="keT-Qr-ij0" firstAttribute="top" secondItem="qwv-il-Rwt" secondAttribute="top" constant="30" id="MmZ-or-xUS"/>
+                            <constraint firstItem="8LB-Hd-pfs" firstAttribute="top" secondItem="keT-Qr-ij0" secondAttribute="bottom" constant="30" id="PbH-uZ-qIW"/>
+                            <constraint firstItem="qwv-il-Rwt" firstAttribute="trailing" secondItem="keT-Qr-ij0" secondAttribute="trailing" constant="25" id="Xqq-82-RIc"/>
+                            <constraint firstItem="qwv-il-Rwt" firstAttribute="trailing" secondItem="8LB-Hd-pfs" secondAttribute="trailing" constant="50" id="cdw-7o-jot"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detalle Usuario" id="QBs-c9-c5u"/>
+                    <connections>
+                        <outlet property="containerView" destination="8LB-Hd-pfs" id="H60-s7-uWT"/>
+                        <outlet property="segmentControl" destination="keT-Qr-ij0" id="iFZ-wx-l5x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7NZ-DS-wrO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="1110"/>
+        </scene>
+        <!--Información del usuario-->
+        <scene sceneID="b5m-F7-KF1">
+            <objects>
+                <viewController storyboardIdentifier="userInformationView" title="Información del usuario" id="7B0-Ty-V0b" customClass="UserInformationViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fp4-vA-6il">
+                        <rect key="frame" x="0.0" y="0.0" width="426" height="784"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui pon la info de cada usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqz-nj-9Sa">
+                                <rect key="frame" x="92" y="381.5" width="242" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="MRM-GG-JoS"/>
+                        <viewLayoutGuide key="safeArea" id="PiQ-8t-sHE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ctb-cp-PyT" firstAttribute="centerX" secondItem="yWP-6M-wTP" secondAttribute="centerX" id="Chj-Hv-hIk"/>
-                            <constraint firstItem="Ctb-cp-PyT" firstAttribute="centerY" secondItem="yWP-6M-wTP" secondAttribute="centerY" id="Fak-1O-JYN"/>
+                            <constraint firstItem="Iqz-nj-9Sa" firstAttribute="centerX" secondItem="fp4-vA-6il" secondAttribute="centerX" id="Nfp-6M-FfY"/>
+                            <constraint firstItem="Iqz-nj-9Sa" firstAttribute="centerY" secondItem="fp4-vA-6il" secondAttribute="centerY" id="grz-Kc-jAS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tanatólogo" id="b9O-aV-inQ"/>
+                    <size key="freeformSize" width="426" height="784"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qnf-KH-rcc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5m-g2-Dqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-300" y="790"/>
+            <point key="canvasLocation" x="2239" y="824"/>
         </scene>
         <!--InformationController-->
         <scene sceneID="esL-EV-Hhn">
@@ -478,7 +817,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ukj-Qa-HJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1094.2028985507247" y="69.642857142857139"/>
+            <point key="canvasLocation" x="-1094" y="70"/>
         </scene>
         <!--Staff Listing Table View Controller-->
         <scene sceneID="Y6U-Ey-UiP">
@@ -516,7 +855,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfH-qh-BNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2192" y="-433"/>
+            <point key="canvasLocation" x="2143" y="-419"/>
         </scene>
         <!--Detalle de Staff-->
         <scene sceneID="P4h-xi-Wht">
@@ -723,7 +1062,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jr4-fx-0IA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2909" y="-273"/>
+            <point key="canvasLocation" x="2861" y="-258"/>
         </scene>
         <!--Agregar Staff-->
         <scene sceneID="J9v-jm-xuG">
@@ -981,7 +1320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evl-De-ifc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1460.8695652173915" y="383.70535714285711"/>
+            <point key="canvasLocation" x="1413" y="398"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
