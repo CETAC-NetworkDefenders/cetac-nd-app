@@ -29,5 +29,16 @@ class cetac_nd_appTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    func testUserList() throws {
+        userInfoController.fetchListing(staffId: String(1), completition: { (result) in         DispatchQueue.main.async {
+            switch result {
+                case.success(let userList):
+                    self.userSummaryList = userList
+                    XCTAssertNotNil(self.userSummaryList)
+                case.failure(let error):
+                    print(error)
+                }
+           }
+        })
+    }
 }
