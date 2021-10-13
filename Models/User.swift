@@ -69,13 +69,13 @@ class UserDetail: Codable {
     var birthPlace: String?
     var occupation: String?
     var religion: String?
-    var zipCode: String?
+    var zipCode: Int?
     var street: String?
-    var addressNumber: String?
+    var addressNumber: Int?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case firstLastname = "userData.first_lastname"
+        case firstLastname = "first_lastname"
         case secondLastname = "second_lastname"
         case firstname
         case gender
@@ -114,8 +114,11 @@ class UserController {
         
         URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
-            
+//            let output = String(data: (data)!, encoding: String.Encoding.utf8) as String?
+//            print(output)
             if let data = data {
+                let output = String(data: (data), encoding: String.Encoding.utf8) as String?
+                print(output)
                 let userList = try? jsonDecoder.decode(UserSummaryList.self, from: data)
                 completition(.success(userList!))
             }
@@ -134,11 +137,12 @@ class UserController {
         
         URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
-            
+            let output = String(data: (data)!, encoding: String.Encoding.utf8) as String?
+            print(output)
             if let data = data {
                 do {
                     let userDetailRes = try jsonDecoder.decode(UserDetail.self, from: data)
-                    print(userDetailRes.firstLastname)
+                    print(userDetailRes.firstname)
                     completion(.success(userDetailRes))
                 } catch {
                     print(error)
