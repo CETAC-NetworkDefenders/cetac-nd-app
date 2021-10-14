@@ -9,7 +9,7 @@ import UIKit
 
 class UserInformationViewController: UIViewController {
     
-    var parentRef: UserListingTableViewController?
+    var parentRef: UserDetailViewController?
     
     var user: UserDetail?
     var tempUser: UserDetail?
@@ -38,7 +38,8 @@ class UserInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.parentRef = self.parent as? UserDetailViewController
+        parentRef!.navigationItem.rightBarButtonItem = self.editButtonItem
         
         userInfoController.fetchDetail(userId: selectedUserId, completion: { (result) in
             DispatchQueue.main.async {
@@ -100,9 +101,9 @@ class UserInformationViewController: UIViewController {
         user?.birthPlace = birthPlaceField.text
         user?.occupation = occupationField.text
         user?.religion = religionField.text
-        user?.zipCode = Int(zipCodeField.text!)
+        user?.zipCode = zipCodeField.text
         user?.street = streetField.text
-        user?.addressNumber = Int(addressNumberField.text!)
+        user?.addressNumber = addressNumberField.text
     }
     
     func fillData() {
@@ -119,9 +120,9 @@ class UserInformationViewController: UIViewController {
         birthPlaceField.text = user?.birthPlace
         occupationField.text = user?.occupation
         religionField.text = user?.religion
-        zipCodeField.text = "\(user?.zipCode)"
+        zipCodeField.text = user?.zipCode
         streetField.text = user?.street
-        addressNumberField.text = "\(user?.addressNumber)"
+        addressNumberField.text = user?.addressNumber
     }
     
     func toggleEdit() -> Void {

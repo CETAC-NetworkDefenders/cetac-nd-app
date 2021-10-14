@@ -69,12 +69,46 @@ class UserDetail: Codable {
     var birthPlace: String?
     var occupation: String?
     var religion: String?
-    var zipCode: Int?
+    var zipCode: String?
     var street: String?
-    var addressNumber: Int?
+    var addressNumber: String?
     
     enum CodingKeys: String, CodingKey {
         case id
+        case firstLastname = "first_lastname"
+        case secondLastname = "second_lastname"
+        case firstname
+        case gender
+        case maritalStatus = "marital_status"
+        case phone
+        case cellphone
+        case birthDate = "birth_date"
+        case birthPlace = "birth_place"
+        case occupation
+        case religion
+        case zipCode = "zip_code"
+        case street
+        case addressNumber = "address_number"
+    }
+}
+
+class UserNew: Codable {
+    var firstLastname: String?
+    var secondLastname: String?
+    var firstname: String?
+    var gender: String?
+    var maritalStatus: String?
+    var phone: String?
+    var cellphone: String?
+    var birthDate: String?
+    var birthPlace: String?
+    var occupation: String?
+    var religion: String?
+    var zipCode: String?
+    var street: String?
+    var addressNumber: String?
+    
+    enum CodingKeys: String, CodingKey {
         case firstLastname = "first_lastname"
         case secondLastname = "second_lastname"
         case firstname
@@ -172,6 +206,35 @@ class UserController {
                 if httpStatus.statusCode != 200 {
                     print("Expected 200, but returned \(httpStatus.statusCode)")
                     print(response!)
+                    completion()
+                }
+                else {
+                    completion()
+                }
+            }
+            else if let error = error {
+                print(error)
+                completion()
+            }
+        }.resume()
+    }
+    
+    func createUser(user: UserNew, completion: @escaping () -> Void) {
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try? jsonEncoder.encode(user)
+        
+        urlComponents.queryItems = nil
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = "POST"
+        request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let httpStatus = response as? HTTPURLResponse {
+                if httpStatus.statusCode != 200 {
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
                     completion()
                 }
                 else {

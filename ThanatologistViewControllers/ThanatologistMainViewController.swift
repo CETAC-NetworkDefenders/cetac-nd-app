@@ -28,7 +28,7 @@ class ThanatologistMainViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         add(asChildViewController: tableController)
-        helloLabel.text = "Hola, \(currentSession!.name!)!"
+        helloLabel.text = "Hola, \(currentSession!.name!)"
     }
     
     private func add(asChildViewController viewController: UIViewController) {

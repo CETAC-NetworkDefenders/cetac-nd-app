@@ -27,6 +27,10 @@ class ThanatologistMenuTableViewController: UITableViewController {
             if indexPath.row == 0 {
                 container?.performSegue(withIdentifier: "showUserListing", sender: container)
             }
+        } else if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                container?.performSegue(withIdentifier: "showNewUser", sender: container)
+            }
         }
     }
 
