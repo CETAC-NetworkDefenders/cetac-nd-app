@@ -1,14 +1,19 @@
 //
-//  SessionListingTableViewController.swift
+//  SessionTableViewController.swift
 //  cetac-nd-app
 //
-//  Created by Diego Urgell on 10/10/21.
+//  Created by Iñigo Zepeda on 10/7/21.
 //
 
 import UIKit
 
 class SessionListingTableViewController: UITableViewController {
-
+    
+    let sessionInfoController = SessionController()
+    //Permte hacer peticiones
+    var sessionSummaryList: SessionSummaryList?
+    //Permite almancenar respuesta de las peticiones
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +25,25 @@ class SessionListingTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    func updateData(accessLevel: String){
+        self.sessionSummaryList = nil
+        self.tableView.reloadData()
+
+        sessionInfoController.fetchListing(accessLevel: accessLevel, completion: { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                    case .success(let sessionList):
+                        self.sessionSummaryList = sessionList
+                        //self.staffSummaryList?.buildGroups()
+                        self.tableView.reloadData()
+                    
+                    case .failure(let error):
+                        print(error)
+                }
+            }
+        })
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -28,18 +52,27 @@ class SessionListingTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return sessionSummaryList == nil ? Int(0) : sessionSummaryList!.sessionList!.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath)
-
-        cell.textLabel?.text = "Sample session"
-
+        
+        let name = sessionSummaryList!.sessionList![indexPath.row].getName()
+        cell.textLabel!.text = name
         return cell
     }
     
+
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -57,7 +90,7 @@ class SessionListingTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

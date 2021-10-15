@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		697CD8952719408900B5B825 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697CD8942719408900B5B825 /* Session.swift */; };
 		6D06CDEE270AD3B8004CF4A7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */; };
 		6D06CDF3270AD983004CF4A7 /* InformationMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */; };
 		6D06CDF5270AE43B004CF4A7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDF4270AE43B004CF4A7 /* Service.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		697CD8942719408900B5B825 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationMenuController.swift; sourceTree = "<group>"; };
 		6D06CDF4270AE43B004CF4A7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				6D06CDF4270AE43B004CF4A7 /* Service.swift */,
 				6D174A0A270D7EC6000DE8A8 /* Staff.swift */,
 				6DEE92342712D9A500DBF7E9 /* Authentication.swift */,
+				697CD8942719408900B5B825 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				6DEE92462713E8A200DBF7E9 /* UserListingTableViewController.swift in Sources */,
 				6DF85E36270EAD5500BCA266 /* AdminMenuViewController.swift in Sources */,
 				6DEE924C2713E90400DBF7E9 /* CreateUserViewController.swift in Sources */,
+				697CD8952719408900B5B825 /* Session.swift in Sources */,
 				6DF9FA7C270D004A003766AF /* ThanatologistMainViewController.swift in Sources */,
 				6D6B393F26E7C85B008DBC5E /* SceneDelegate.swift in Sources */,
 				6DF9FA7A270C28D4003766AF /* LoginController.swift in Sources */,
