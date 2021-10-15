@@ -968,7 +968,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YAl-Fg-WOl" userLabel="ApellidoPaterno">
-                                                <rect key="frame" x="0.0" y="59" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="60" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Paterno: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP2-cx-usT">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -984,7 +984,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2g6-C5-ssS" userLabel="ApellidoMaterno">
-                                                <rect key="frame" x="0.0" y="118" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="120" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apellido Materno: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-jT-gGm">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1000,7 +1000,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PhF-dA-1Fa" userLabel="Genero">
-                                                <rect key="frame" x="0.0" y="176.66666666666666" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="180" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genero: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGy-U1-t6w">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1016,7 +1016,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aDX-N5-9Cj" userLabel="EstadoCivil">
-                                                <rect key="frame" x="0.0" y="235.66666666666669" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="240" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado Civil: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DL9-7y-ZU4">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1032,7 +1032,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fuw-0C-fB2" userLabel="Telefono">
-                                                <rect key="frame" x="0.0" y="294.66666666666669" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="300" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefono: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2Y-ki-vWp">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1048,7 +1048,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AMK-hm-Qvc" userLabel="Celular">
-                                                <rect key="frame" x="0.0" y="353.66666666666669" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="360" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsR-h3-ujO">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1064,23 +1064,18 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CDt-te-tfR" userLabel="FechaDeNacimiento">
-                                                <rect key="frame" x="0.0" y="412.33333333333331" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="419.66666666666669" width="426" height="20.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de Nacimiento: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSS-gi-ETo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="426" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g7t-nb-WLQ">
-                                                        <rect key="frame" x="213" y="0.0" width="213" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mbf-AL-u82" userLabel="LugarDeNacimiento">
-                                                <rect key="frame" x="0.0" y="471.33333333333337" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="466" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lugar de Nacimiento:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdh-LP-a92">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1096,7 +1091,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dC2-24-825" userLabel="Ocupacion">
-                                                <rect key="frame" x="0.0" y="530.33333333333337" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="526" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ocupacion: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-iL-V4S">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1112,7 +1107,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uRv-Zg-YO8" userLabel="Religion">
-                                                <rect key="frame" x="0.0" y="589.33333333333337" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="586" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Religion: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTn-gI-ax5">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1128,7 +1123,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kOA-bx-el6" userLabel="CodigoPostal">
-                                                <rect key="frame" x="0.0" y="648" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="646" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Codigo Postal: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A84-Zi-rNG">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1144,7 +1139,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mwR-x3-xX6" userLabel="Calle">
-                                                <rect key="frame" x="0.0" y="707" width="426" height="34"/>
+                                                <rect key="frame" x="0.0" y="706" width="426" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calle: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIX-EZ-pfL">
                                                         <rect key="frame" x="0.0" y="0.0" width="213" height="34"/>
@@ -1204,7 +1199,6 @@
                     <size key="freeformSize" width="426" height="784"/>
                     <connections>
                         <outlet property="addressNumberField" destination="AQL-d3-fve" id="QM9-YA-u4K"/>
-                        <outlet property="birthDateField" destination="g7t-nb-WLQ" id="JBV-2Z-VZZ"/>
                         <outlet property="birthPlaceField" destination="xbc-CV-MOQ" id="vU7-Sf-Mrp"/>
                         <outlet property="cellphoneField" destination="khu-Yt-52b" id="FVH-hq-WM1"/>
                         <outlet property="firstLastNameField" destination="bmQ-eS-MlJ" id="auO-wn-KbQ"/>
