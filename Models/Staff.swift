@@ -12,12 +12,14 @@ class StaffSummary: Codable{
     var firstName: String?
     var firstLastName: String?
     var secondLastName: String?
+    var recoveryFee: Int?
     
     enum CodingKeys: String, CodingKey {
         case id
         case firstName = "firstname"
         case firstLastName = "first_lastname"
         case secondLastName = "second_lastname"
+        case recoveryFee = "recovery_fee"
     }
     
     func getName() -> String{

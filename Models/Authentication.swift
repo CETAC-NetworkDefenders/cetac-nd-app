@@ -39,7 +39,7 @@ class AuthenticationController {
     
     func fetchSalt(email: String, completion: @escaping (Result<Salt, Error>) -> Void){
         urlComponents.queryItems = [
-            URLQueryItem(name: "username", value: email)
+            URLQueryItem(name: "email", value: email)
         ]
         
         URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
@@ -93,10 +93,14 @@ class AuthenticationController {
         })
         self.group.wait()
         
+        print(self.salt!.salt)
+        
         // If user is not found, credentials are wrong
         if salt!.salt != nil{
             // Otherwise, hash the password using the received salt and send the id and password
             let securedPassword = SecurityUtils.hashPassword(clearTextPassword: password, salt: salt!.salt!)
+            
+            print(securedPassword)
 
             // Then make the request to get the user id and the access_level, but once again enter Dispatch Group.
             self.group.enter()
@@ -114,6 +118,8 @@ class AuthenticationController {
             })
         }
         self.group.wait()
+        let id: Int = self.salt!.id!
+        self.staff?.userId = String(id)
         return self.staff
     }
 }

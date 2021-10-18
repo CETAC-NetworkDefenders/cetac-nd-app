@@ -11,6 +11,7 @@ class UserDetailViewController: UIViewController {
     
     @IBOutlet var containerView: UIView!
     @IBOutlet var segmentControl: UISegmentedControl!
+    var selectedUser: UserSummary?
     
     
     private lazy var userInformationController: UserInformationViewController = {
@@ -43,8 +44,22 @@ class UserDetailViewController: UIViewController {
         segmentControl.insertSegment(withTitle: "Sesiones", at: 1, animated: false)
         segmentControl.addTarget(self, action: #selector(toggleView), for: .valueChanged)
         
+        print("Before updating subview info")
+        self.updateSubViews()
+        print("After updating subview info")
+
         self.add(asChildViewController: userInformationController)
+        self.remove(asChildViewController: sessionListingController)
         segmentControl.selectedSegmentIndex = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.sessionListingController.updateData()
+    }
+
+    func updateSubViews(){
+        self.userInformationController.selectedUserId = self.selectedUser!.id
+        self.sessionListingController.selectedUserId = self.selectedUser!.id
     }
     
     @objc func toggleView() -> Void{
@@ -73,15 +88,10 @@ class UserDetailViewController: UIViewController {
         viewController.removeFromParent()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is CreateSessionViewController {
+            let vc = segue.destination as? CreateSessionViewController
+            vc?.recordId = self.selectedUser?.recordId
+        }
     }
-    */
-
 }

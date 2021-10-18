@@ -11,9 +11,9 @@ class UserInformationViewController: UIViewController {
     
     var parentRef: UserDetailViewController?
     
-    var user: UserDetail?
-    var tempUser: UserDetail?
-    var selectedUserId = 1
+    var user: User?
+    var tempUser: User?
+    var selectedUserId: Int? 
     
     let userInfoController = UserController()
     
@@ -31,7 +31,8 @@ class UserInformationViewController: UIViewController {
     @IBOutlet var zipCodeField: UITextField!
     @IBOutlet var streetField: UITextField!
     @IBOutlet var addressNumberField: UITextField!
-
+    @IBOutlet var recordField: UITextField!
+    
     let alertSuccess = UIAlertController(title: "Usuario actualizado", message: "La informacion del usuario se ha actualizado en la base de datos", preferredStyle: .alert)
     
     let validationError = UIAlertController(title: "Datos no validos", message: "", preferredStyle: .alert)
@@ -39,9 +40,25 @@ class UserInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.parentRef = self.parent as? UserDetailViewController
-        parentRef!.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        userInfoController.fetchDetail(userId: selectedUserId, completion: { (result) in
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        alertSuccess.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        validationError.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("Information view just appeared")
+        self.updateData()
+        parentRef!.navigationItem.rightBarButtonItem = self.editButtonItem
+
+    }
+    
+    func updateData(){
+        print("Fetching the data for user id \(selectedUserId)")
+        
+        userInfoController.fetchDetail(userId: selectedUserId!, completion: { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let userRes):
@@ -52,12 +69,6 @@ class UserInformationViewController: UIViewController {
                 }
             }
         })
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
-        alertSuccess.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        validationError.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -123,6 +134,7 @@ class UserInformationViewController: UIViewController {
         zipCodeField.text = user?.zipCode
         streetField.text = user?.street
         addressNumberField.text = user?.addressNumber
+        recordField.text = String(user!.record_id!)
     }
     
     func toggleEdit() -> Void {

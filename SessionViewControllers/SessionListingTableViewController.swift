@@ -9,33 +9,46 @@ import UIKit
 
 class SessionListingTableViewController: UITableViewController {
     
+    var parentRef: UserDetailViewController?
+    
     let sessionInfoController = SessionController()
     //Permte hacer peticiones
     var sessionSummaryList: SessionSummaryList?
     //Permite almancenar respuesta de las peticiones
+    var selectedUserId: Int?
+    
+    var selectedSessionId: Int?
     
     override func viewDidLoad() {
+        self.parentRef = self.parent as? UserDetailViewController
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
     
-    func updateData(accessLevel: String){
+    override func viewDidAppear(_ animated: Bool) {
+        print("View just appeared")
+        let addBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addSession))
+
+        parentRef!.navigationItem.rightBarButtonItem = addBarButton
+
+    }
+    
+    @objc func addSession(){
+        parentRef!.performSegue(withIdentifier: "showCreateSession", sender: parentRef)
+    }
+    
+    func updateData(){
+        let userId = self.selectedUserId!
         self.sessionSummaryList = nil
         self.tableView.reloadData()
-
-        sessionInfoController.fetchListing(accessLevel: accessLevel, completion: { (result) in
+        print("Getting the listing info")
+        sessionInfoController.fetchListing(id: userId, completion: { (result) in
             DispatchQueue.main.async {
                 switch result {
                     case .success(let sessionList):
                         self.sessionSummaryList = sessionList
-                        //self.staffSummaryList?.buildGroups()
+                        print("Successful listing request")
                         self.tableView.reloadData()
                     
                     case .failure(let error):
@@ -52,71 +65,37 @@ class SessionListingTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return sessionSummaryList == nil ? Int(0) : sessionSummaryList!.sessionList!.count
+        if sessionSummaryList == nil{
+            return 0
+        }
+        else if sessionSummaryList!.sessionList == nil{
+            return 0
+        }
+        else{
+            return sessionSummaryList!.sessionList!.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath)
         
-        let name = sessionSummaryList!.sessionList![indexPath.row].getName()
+        let name = sessionSummaryList!.sessionList![indexPath.row].intervention_type
+        let date = sessionSummaryList!.sessionList![indexPath.row].session_date
         cell.textLabel!.text = name
+        cell.detailTextLabel!.text = date
         return cell
     }
     
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedSessionId = sessionSummaryList?.sessionList?[indexPath.row].session_id
+        performSegue(withIdentifier: "showSessionDetail", sender: self)
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is SessionDetailViewController{
+            let vc = segue.destination as? SessionDetailViewController
+            vc!.sessionId = self.selectedSessionId
         }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
