@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FD26406728C053AB82B1DBC /* Pods_cetac_nd_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45040CB972B0E909EB6B6954 /* Pods_cetac_nd_app.framework */; };
 		697CD8952719408900B5B825 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697CD8942719408900B5B825 /* Session.swift */; };
 		6D06CDEE270AD3B8004CF4A7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */; };
 		6D06CDF3270AD983004CF4A7 /* InformationMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */; };
@@ -46,6 +47,7 @@
 		6DF85E3A270EBB7500BCA266 /* StaffListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF85E39270EBB7500BCA266 /* StaffListingTableViewController.swift */; };
 		6DF9FA7A270C28D4003766AF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9FA79270C28D4003766AF /* LoginController.swift */; };
 		6DF9FA7C270D004A003766AF /* ThanatologistMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9FA7B270D004A003766AF /* ThanatologistMainViewController.swift */; };
+		AABC5B034A86FD1F5A0C89AD /* Pods_cetac_nd_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FC62DEB8DC16499D8636B9 /* Pods_cetac_nd_appTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1480AA39C12F38D4291A661C /* Pods-cetac-nd-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cetac-nd-appTests.release.xcconfig"; path = "Target Support Files/Pods-cetac-nd-appTests/Pods-cetac-nd-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		45040CB972B0E909EB6B6954 /* Pods_cetac_nd_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cetac_nd_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ABD907F2166FC56FAB9579A /* Pods-cetac-nd-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cetac-nd-appTests.debug.xcconfig"; path = "Target Support Files/Pods-cetac-nd-appTests/Pods-cetac-nd-appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		64FC62DEB8DC16499D8636B9 /* Pods_cetac_nd_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cetac_nd_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		697CD8942719408900B5B825 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationMenuController.swift; sourceTree = "<group>"; };
@@ -99,6 +105,8 @@
 		6DF85E39270EBB7500BCA266 /* StaffListingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListingTableViewController.swift; sourceTree = "<group>"; };
 		6DF9FA79270C28D4003766AF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		6DF9FA7B270D004A003766AF /* ThanatologistMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanatologistMainViewController.swift; sourceTree = "<group>"; };
+		8252B1587943789C6BB71E6C /* Pods-cetac-nd-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cetac-nd-app.debug.xcconfig"; path = "Target Support Files/Pods-cetac-nd-app/Pods-cetac-nd-app.debug.xcconfig"; sourceTree = "<group>"; };
+		EF2FA7FF55512FE80892D5A5 /* Pods-cetac-nd-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cetac-nd-app.release.xcconfig"; path = "Target Support Files/Pods-cetac-nd-app/Pods-cetac-nd-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FD26406728C053AB82B1DBC /* Pods_cetac_nd_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AABC5B034A86FD1F5A0C89AD /* Pods_cetac_nd_appTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +158,8 @@
 				6D6B393B26E7C85B008DBC5E /* cetac-nd-app */,
 				6DEE9229271258A400DBF7E9 /* cetac-nd-appTests */,
 				6D6B393A26E7C85B008DBC5E /* Products */,
+				BE82E3962CABA7A24816EA61 /* Pods */,
+				B18E5E82EFC5BDFD725E5524 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,6 +265,27 @@
 			path = SessionViewControllers;
 			sourceTree = "<group>";
 		};
+		B18E5E82EFC5BDFD725E5524 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45040CB972B0E909EB6B6954 /* Pods_cetac_nd_app.framework */,
+				64FC62DEB8DC16499D8636B9 /* Pods_cetac_nd_appTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE82E3962CABA7A24816EA61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8252B1587943789C6BB71E6C /* Pods-cetac-nd-app.debug.xcconfig */,
+				EF2FA7FF55512FE80892D5A5 /* Pods-cetac-nd-app.release.xcconfig */,
+				4ABD907F2166FC56FAB9579A /* Pods-cetac-nd-appTests.debug.xcconfig */,
+				1480AA39C12F38D4291A661C /* Pods-cetac-nd-appTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,9 +293,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D6B394D26E7C85D008DBC5E /* Build configuration list for PBXNativeTarget "cetac-nd-app" */;
 			buildPhases = (
+				17CBACDC91B796875290D80E /* [CP] Check Pods Manifest.lock */,
 				6D6B393526E7C85B008DBC5E /* Sources */,
 				6D6B393626E7C85B008DBC5E /* Frameworks */,
 				6D6B393726E7C85B008DBC5E /* Resources */,
+				C85D33A88349748AB0CC03F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,6 +312,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DEE9230271258A400DBF7E9 /* Build configuration list for PBXNativeTarget "cetac-nd-appTests" */;
 			buildPhases = (
+				3ED42E325DB786F95D5A0368 /* [CP] Check Pods Manifest.lock */,
 				6DEE9224271258A400DBF7E9 /* Sources */,
 				6DEE9225271258A400DBF7E9 /* Frameworks */,
 				6DEE9226271258A400DBF7E9 /* Resources */,
@@ -348,6 +384,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17CBACDC91B796875290D80E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cetac-nd-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3ED42E325DB786F95D5A0368 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cetac-nd-appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C85D33A88349748AB0CC03F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cetac-nd-app/Pods-cetac-nd-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cetac-nd-app/Pods-cetac-nd-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cetac-nd-app/Pods-cetac-nd-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6D6B393526E7C85B008DBC5E /* Sources */ = {
@@ -547,6 +647,7 @@
 		};
 		6D6B394E26E7C85D008DBC5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8252B1587943789C6BB71E6C /* Pods-cetac-nd-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -566,6 +667,7 @@
 		};
 		6D6B394F26E7C85D008DBC5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF2FA7FF55512FE80892D5A5 /* Pods-cetac-nd-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -585,6 +687,7 @@
 		};
 		6DEE922E271258A400DBF7E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ABD907F2166FC56FAB9579A /* Pods-cetac-nd-appTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -610,6 +713,7 @@
 		};
 		6DEE922F271258A400DBF7E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1480AA39C12F38D4291A661C /* Pods-cetac-nd-appTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
