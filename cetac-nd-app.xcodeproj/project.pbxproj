@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		6D06CDF7270AE71F004CF4A7 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D06CDF6270AE71F004CF4A7 /* services.json */; };
 		6D06CDF9270B4AD8004CF4A7 /* ServiceInformationControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDF8270B4AD7004CF4A7 /* ServiceInformationControlller.swift */; };
 		6D0A0024271CD883000B80CB /* ReopenRecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A0023271CD883000B80CB /* ReopenRecordTableViewController.swift */; };
+		6D0A0027271D4AA9000B80CB /* SessionReportMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A0026271D4AA9000B80CB /* SessionReportMainViewController.swift */; };
+		6D0A0029271D4AEC000B80CB /* ServiceTypeReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A0028271D4AEC000B80CB /* ServiceTypeReportViewController.swift */; };
+		6D0A002B271D4B04000B80CB /* MotiveReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A002A271D4B04000B80CB /* MotiveReportTableViewController.swift */; };
+		6D0A002D271D4B16000B80CB /* InterventionTypeReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A002C271D4B16000B80CB /* InterventionTypeReportViewController.swift */; };
+		6D0A002F271D596A000B80CB /* SessionReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0A002E271D596A000B80CB /* SessionReports.swift */; };
 		6D174A0B270D7EC7000DE8A8 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D174A0A270D7EC6000DE8A8 /* Staff.swift */; };
 		6D174A0D270D8597000DE8A8 /* StaffListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D174A0C270D8597000DE8A8 /* StaffListingViewController.swift */; };
 		6D174A10270D8BB7000DE8A8 /* StaffDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D174A0F270D8BB7000DE8A8 /* StaffDetailViewController.swift */; };
@@ -72,6 +77,11 @@
 		6D06CDF6270AE71F004CF4A7 /* services.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
 		6D06CDF8270B4AD7004CF4A7 /* ServiceInformationControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInformationControlller.swift; sourceTree = "<group>"; };
 		6D0A0023271CD883000B80CB /* ReopenRecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReopenRecordTableViewController.swift; sourceTree = "<group>"; };
+		6D0A0026271D4AA9000B80CB /* SessionReportMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionReportMainViewController.swift; sourceTree = "<group>"; };
+		6D0A0028271D4AEC000B80CB /* ServiceTypeReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypeReportViewController.swift; sourceTree = "<group>"; };
+		6D0A002A271D4B04000B80CB /* MotiveReportTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotiveReportTableViewController.swift; sourceTree = "<group>"; };
+		6D0A002C271D4B16000B80CB /* InterventionTypeReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterventionTypeReportViewController.swift; sourceTree = "<group>"; };
+		6D0A002E271D596A000B80CB /* SessionReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionReports.swift; sourceTree = "<group>"; };
 		6D174A0A270D7EC6000DE8A8 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		6D174A0C270D8597000DE8A8 /* StaffListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListingViewController.swift; sourceTree = "<group>"; };
 		6D174A0F270D8BB7000DE8A8 /* StaffDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffDetailViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +142,10 @@
 		6D0A0025271CF617000B80CB /* Reports */ = {
 			isa = PBXGroup;
 			children = (
+				6D0A0026271D4AA9000B80CB /* SessionReportMainViewController.swift */,
+				6D0A0028271D4AEC000B80CB /* ServiceTypeReportViewController.swift */,
+				6D0A002A271D4B04000B80CB /* MotiveReportTableViewController.swift */,
+				6D0A002C271D4B16000B80CB /* InterventionTypeReportViewController.swift */,
 			);
 			path = Reports;
 			sourceTree = "<group>";
@@ -239,6 +253,7 @@
 				6D174A0A270D7EC6000DE8A8 /* Staff.swift */,
 				6DEE92342712D9A500DBF7E9 /* Authentication.swift */,
 				697CD8942719408900B5B825 /* Session.swift */,
+				6D0A002E271D596A000B80CB /* SessionReports.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,7 +297,6 @@
 				4ABD907F2166FC56FAB9579A /* Pods-cetac-nd-appTests.debug.xcconfig */,
 				1480AA39C12F38D4291A661C /* Pods-cetac-nd-appTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -458,14 +472,18 @@
 				6DEE92442713E78A00DBF7E9 /* ThanatologistMenuTableViewController.swift in Sources */,
 				6DEE924A2713E8EE00DBF7E9 /* UserInformationViewController.swift in Sources */,
 				6D174A0D270D8597000DE8A8 /* StaffListingViewController.swift in Sources */,
+				6D0A0029271D4AEC000B80CB /* ServiceTypeReportViewController.swift in Sources */,
 				6D6B393D26E7C85B008DBC5E /* AppDelegate.swift in Sources */,
 				6D174A0B270D7EC7000DE8A8 /* Staff.swift in Sources */,
+				6D0A002D271D4B16000B80CB /* InterventionTypeReportViewController.swift in Sources */,
 				6D06CDF3270AD983004CF4A7 /* InformationMenuController.swift in Sources */,
+				6D0A002F271D596A000B80CB /* SessionReports.swift in Sources */,
 				6D0A0024271CD883000B80CB /* ReopenRecordTableViewController.swift in Sources */,
 				6DF85E3A270EBB7500BCA266 /* StaffListingTableViewController.swift in Sources */,
 				6DEE924F2713ED7300DBF7E9 /* SessionListingTableViewController.swift in Sources */,
 				6DEE92482713E8CE00DBF7E9 /* UserDetailViewController.swift in Sources */,
 				6D06CDF5270AE43B004CF4A7 /* Service.swift in Sources */,
+				6D0A002B271D4B04000B80CB /* MotiveReportTableViewController.swift in Sources */,
 				6D06CDF9270B4AD8004CF4A7 /* ServiceInformationControlller.swift in Sources */,
 				6DEE923227126F6000DBF7E9 /* SecurityUtils.swift in Sources */,
 				6DEE92352712D9A500DBF7E9 /* Authentication.swift in Sources */,
@@ -477,6 +495,7 @@
 				6DEE92462713E8A200DBF7E9 /* UserListingTableViewController.swift in Sources */,
 				6DF85E36270EAD5500BCA266 /* AdminMenuViewController.swift in Sources */,
 				6DEE924C2713E90400DBF7E9 /* CreateUserViewController.swift in Sources */,
+				6D0A0027271D4AA9000B80CB /* SessionReportMainViewController.swift in Sources */,
 				697CD8952719408900B5B825 /* Session.swift in Sources */,
 				6DF9FA7C270D004A003766AF /* ThanatologistMainViewController.swift in Sources */,
 				6D6B393F26E7C85B008DBC5E /* SceneDelegate.swift in Sources */,

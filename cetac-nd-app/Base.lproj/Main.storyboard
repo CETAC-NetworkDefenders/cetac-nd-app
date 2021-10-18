@@ -170,17 +170,186 @@
             </objects>
             <point key="canvasLocation" x="-306" y="818"/>
         </scene>
+        <!--Service Type Report View Controller-->
+        <scene sceneID="a1r-eB-Jtp">
+            <objects>
+                <viewController storyboardIdentifier="serviceReportView" id="Eom-rg-sYX" customClass="ServiceTypeReportViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="83y-uV-pRE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTW-vf-VVX" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="414" height="642"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P3Z-IU-UKQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tTW-vf-VVX" firstAttribute="leading" secondItem="P3Z-IU-UKQ" secondAttribute="leading" id="GVD-16-04X"/>
+                            <constraint firstItem="P3Z-IU-UKQ" firstAttribute="bottom" secondItem="tTW-vf-VVX" secondAttribute="bottom" id="IDR-Li-31H"/>
+                            <constraint firstItem="tTW-vf-VVX" firstAttribute="top" secondItem="P3Z-IU-UKQ" secondAttribute="top" id="VkG-Rh-BlF"/>
+                            <constraint firstItem="P3Z-IU-UKQ" firstAttribute="trailing" secondItem="tTW-vf-VVX" secondAttribute="trailing" id="X8c-0l-u94"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="686"/>
+                    <connections>
+                        <outlet property="barChart" destination="tTW-vf-VVX" id="0gz-be-7cJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jju-c8-dJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-300" y="2325"/>
+        </scene>
+        <!--Intervention Type Report View Controller-->
+        <scene sceneID="1Cg-gb-IQt">
+            <objects>
+                <viewController storyboardIdentifier="interventionReportView" id="7Bb-tZ-w0a" customClass="InterventionTypeReportViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="erI-gc-1hV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="693"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hb-zg-las" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="414" height="649"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Lp-2q-pre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Hb-zg-las" firstAttribute="top" secondItem="5Lp-2q-pre" secondAttribute="top" id="NXk-mS-sFK"/>
+                            <constraint firstItem="5Lp-2q-pre" firstAttribute="bottom" secondItem="1Hb-zg-las" secondAttribute="bottom" id="Qcs-Vp-mzi"/>
+                            <constraint firstItem="1Hb-zg-las" firstAttribute="leading" secondItem="5Lp-2q-pre" secondAttribute="leading" id="hXA-qK-P40"/>
+                            <constraint firstItem="5Lp-2q-pre" firstAttribute="trailing" secondItem="1Hb-zg-las" secondAttribute="trailing" id="i0v-BO-OBg"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="693"/>
+                    <connections>
+                        <outlet property="pieChart" destination="1Hb-zg-las" id="BlJ-sp-Y4C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LNp-nE-5vU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534.78260869565224" y="2325.3348214285711"/>
+        </scene>
+        <!--Motive Report Table View Controller-->
+        <scene sceneID="wWI-Cq-PaN">
+            <objects>
+                <tableViewController storyboardIdentifier="motiveReportView" id="tLp-W1-RDB" customClass="MotiveReportTableViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jIh-rk-fE5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="515"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="motiveCell" textLabel="hKh-GQ-RVc" detailTextLabel="mnn-Bc-X9w" style="IBUITableViewCellStyleValue1" id="qd9-NN-366">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qd9-NN-366" id="yOn-fP-Ukq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hKh-GQ-RVc">
+                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mnn-Bc-X9w">
+                                            <rect key="frame" x="361" y="15" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tLp-W1-RDB" id="0Ea-AV-6kh"/>
+                            <outlet property="delegate" destination="tLp-W1-RDB" id="iLB-JY-e0p"/>
+                        </connections>
+                    </tableView>
+                    <size key="freeformSize" width="414" height="515"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSr-O3-WYC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1055" y="1662"/>
+        </scene>
         <!--Reporte de Sesiones-->
         <scene sceneID="WFe-OV-iqV">
             <objects>
-                <viewController id="oBf-YR-6aT" sceneMemberID="viewController">
+                <viewController id="oBf-YR-6aT" customClass="SessionReportMainViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x1R-6V-BpD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xIC-ys-sGh">
+                                <rect key="frame" x="25" y="118" width="364" height="32"/>
+                                <segments>
+                                    <segment title="Tipos de servicio"/>
+                                    <segment title="Motivos"/>
+                                    <segment title="Herramientas"/>
+                                </segments>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="3" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCf-fZ-7F3">
+                                <rect key="frame" x="23" y="174" width="368" height="31"/>
+                                <connections>
+                                    <action selector="timespanChange:" destination="oBf-YR-6aT" eventType="valueChanged" id="Q7O-tD-RfJ"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="7K8-XS-EYh">
+                                <rect key="frame" x="25" y="209" width="364" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69c-vL-QBO">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soi-Yy-7M5">
+                                        <rect key="frame" x="174.5" y="0.0" width="29" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Año" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZR-Fl-yJT">
+                                        <rect key="frame" x="336.5" y="0.0" width="27.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sck-pB-EnN">
+                                <rect key="frame" x="25" y="237" width="364" height="556"/>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="s6Y-io-xzs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zCf-fZ-7F3" firstAttribute="top" secondItem="xIC-ys-sGh" secondAttribute="bottom" constant="25" id="41n-vz-4bU"/>
+                            <constraint firstItem="7K8-XS-EYh" firstAttribute="leading" secondItem="s6Y-io-xzs" secondAttribute="leading" constant="25" id="4NA-WN-h99"/>
+                            <constraint firstItem="7K8-XS-EYh" firstAttribute="top" secondItem="zCf-fZ-7F3" secondAttribute="bottom" constant="5" id="6xQ-ne-x4m"/>
+                            <constraint firstItem="s6Y-io-xzs" firstAttribute="trailing" secondItem="7K8-XS-EYh" secondAttribute="trailing" constant="25" id="Cgh-1A-0ou"/>
+                            <constraint firstItem="xIC-ys-sGh" firstAttribute="leading" secondItem="s6Y-io-xzs" secondAttribute="leading" constant="25" id="EM3-Dx-ClY"/>
+                            <constraint firstItem="zCf-fZ-7F3" firstAttribute="leading" secondItem="s6Y-io-xzs" secondAttribute="leading" constant="25" id="I2h-Cx-eHx"/>
+                            <constraint firstItem="s6Y-io-xzs" firstAttribute="trailing" secondItem="sck-pB-EnN" secondAttribute="trailing" constant="25" id="IvC-mf-WxU"/>
+                            <constraint firstItem="s6Y-io-xzs" firstAttribute="trailing" secondItem="zCf-fZ-7F3" secondAttribute="trailing" constant="25" id="NSB-Ua-z4Y"/>
+                            <constraint firstItem="sck-pB-EnN" firstAttribute="top" secondItem="7K8-XS-EYh" secondAttribute="bottom" constant="10" id="Ufs-cp-D0G"/>
+                            <constraint firstItem="sck-pB-EnN" firstAttribute="leading" secondItem="s6Y-io-xzs" secondAttribute="leading" constant="25" id="cD3-cr-CTX"/>
+                            <constraint firstItem="s6Y-io-xzs" firstAttribute="trailing" secondItem="xIC-ys-sGh" secondAttribute="trailing" constant="25" id="dOJ-yp-tEl"/>
+                            <constraint firstItem="xIC-ys-sGh" firstAttribute="top" secondItem="s6Y-io-xzs" secondAttribute="top" constant="30" id="sDD-Uf-E2J"/>
+                            <constraint firstItem="s6Y-io-xzs" firstAttribute="bottom" secondItem="sck-pB-EnN" secondAttribute="bottom" constant="20" id="tD4-7n-6at"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reporte de Sesiones" id="wDa-r5-7y0"/>
+                    <connections>
+                        <outlet property="reportContainer" destination="sck-pB-EnN" id="bWh-DY-l1g"/>
+                        <outlet property="reportTypeSelector" destination="xIC-ys-sGh" id="e82-KX-of8"/>
+                        <outlet property="timeFrameSlider" destination="zCf-fZ-7F3" id="gcd-md-nvY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vx-td-Pj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
