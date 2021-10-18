@@ -23,8 +23,19 @@ class AdminMenuTableViewController: UITableViewController {
             if indexPath.row == 0 {
                 container!.performSegue(withIdentifier: "showStaffListing", sender: container)
             }
-            if indexPath.row == 1 {
+            else if indexPath.row == 1 {
                 container!.performSegue(withIdentifier: "showStaffCreation", sender: container)
+            }
+        }
+        else if indexPath.section == 1{
+            if indexPath.row == 0 {
+                container!.performSegue(withIdentifier: "showSessionReport", sender: container)
+            }
+            else if indexPath.row == 1 {
+                container!.performSegue(withIdentifier: "showUserReport", sender: container)
+            }
+            else if indexPath.row == 2 {
+                container!.performSegue(withIdentifier: "showFeesReport", sender: container)
             }
         }
 

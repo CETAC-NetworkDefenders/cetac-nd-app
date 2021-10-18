@@ -118,8 +118,8 @@ class AuthenticationController {
             })
         }
         self.group.wait()
-        let id: Int = self.salt!.id!
-        self.staff?.userId = String(id)
+        let id: Int? = self.salt?.id
+        self.staff?.userId = String(id ?? 0)
         return self.staff
     }
 }
