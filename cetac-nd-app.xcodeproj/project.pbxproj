@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5FD26406728C053AB82B1DBC /* Pods_cetac_nd_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45040CB972B0E909EB6B6954 /* Pods_cetac_nd_app.framework */; };
+		695403A7271E4D59008FAEC5 /* FeesReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695403A6271E4D59008FAEC5 /* FeesReports.swift */; };
+		695403AB271E52DE008FAEC5 /* GlobalRecoveryFeeReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695403AA271E52DE008FAEC5 /* GlobalRecoveryFeeReportViewController.swift */; };
+		695403B5271E5F00008FAEC5 /* ThanatologistRecoveryFeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695403B4271E5F00008FAEC5 /* ThanatologistRecoveryFeeViewController.swift */; };
+		695403B9271E6166008FAEC5 /* RecoveryFeesMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695403B8271E6166008FAEC5 /* RecoveryFeesMainViewController.swift */; };
 		697CD8952719408900B5B825 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697CD8942719408900B5B825 /* Session.swift */; };
 		6D06CDEE270AD3B8004CF4A7 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */; };
 		6D06CDF3270AD983004CF4A7 /* InformationMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */; };
@@ -70,6 +74,10 @@
 		45040CB972B0E909EB6B6954 /* Pods_cetac_nd_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cetac_nd_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ABD907F2166FC56FAB9579A /* Pods-cetac-nd-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cetac-nd-appTests.debug.xcconfig"; path = "Target Support Files/Pods-cetac-nd-appTests/Pods-cetac-nd-appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		64FC62DEB8DC16499D8636B9 /* Pods_cetac_nd_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cetac_nd_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		695403A6271E4D59008FAEC5 /* FeesReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeesReports.swift; sourceTree = "<group>"; };
+		695403AA271E52DE008FAEC5 /* GlobalRecoveryFeeReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRecoveryFeeReportViewController.swift; sourceTree = "<group>"; };
+		695403B4271E5F00008FAEC5 /* ThanatologistRecoveryFeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanatologistRecoveryFeeViewController.swift; sourceTree = "<group>"; };
+		695403B8271E6166008FAEC5 /* RecoveryFeesMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryFeesMainViewController.swift; sourceTree = "<group>"; };
 		697CD8942719408900B5B825 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		6D06CDEC270AD3B8004CF4A7 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		6D06CDF2270AD983004CF4A7 /* InformationMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationMenuController.swift; sourceTree = "<group>"; };
@@ -146,6 +154,9 @@
 				6D0A0028271D4AEC000B80CB /* ServiceTypeReportViewController.swift */,
 				6D0A002A271D4B04000B80CB /* MotiveReportTableViewController.swift */,
 				6D0A002C271D4B16000B80CB /* InterventionTypeReportViewController.swift */,
+				695403AA271E52DE008FAEC5 /* GlobalRecoveryFeeReportViewController.swift */,
+				695403B4271E5F00008FAEC5 /* ThanatologistRecoveryFeeViewController.swift */,
+				695403B8271E6166008FAEC5 /* RecoveryFeesMainViewController.swift */,
 			);
 			path = Reports;
 			sourceTree = "<group>";
@@ -254,6 +265,7 @@
 				6DEE92342712D9A500DBF7E9 /* Authentication.swift */,
 				697CD8942719408900B5B825 /* Session.swift */,
 				6D0A002E271D596A000B80CB /* SessionReports.swift */,
+				695403A6271E4D59008FAEC5 /* FeesReports.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -492,8 +504,11 @@
 				6D17F5C6271B8820005D4E92 /* SessionDetailViewController.swift in Sources */,
 				6D17F5C8271BBE43005D4E92 /* CreateSessionViewController.swift in Sources */,
 				6DF85E38270EAEE300BCA266 /* AdminMenuTableViewController.swift in Sources */,
+				695403A7271E4D59008FAEC5 /* FeesReports.swift in Sources */,
 				6DEE92462713E8A200DBF7E9 /* UserListingTableViewController.swift in Sources */,
 				6DF85E36270EAD5500BCA266 /* AdminMenuViewController.swift in Sources */,
+				695403B5271E5F00008FAEC5 /* ThanatologistRecoveryFeeViewController.swift in Sources */,
+				695403B9271E6166008FAEC5 /* RecoveryFeesMainViewController.swift in Sources */,
 				6DEE924C2713E90400DBF7E9 /* CreateUserViewController.swift in Sources */,
 				6D0A0027271D4AA9000B80CB /* SessionReportMainViewController.swift in Sources */,
 				697CD8952719408900B5B825 /* Session.swift in Sources */,
@@ -501,6 +516,7 @@
 				6D6B393F26E7C85B008DBC5E /* SceneDelegate.swift in Sources */,
 				6DF9FA7A270C28D4003766AF /* LoginController.swift in Sources */,
 				6D174A10270D8BB7000DE8A8 /* StaffDetailViewController.swift in Sources */,
+				695403AB271E52DE008FAEC5 /* GlobalRecoveryFeeReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +689,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8A5GN88TCH;
 				INFOPLIST_FILE = "cetac-nd-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -693,6 +710,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8A5GN88TCH;
 				INFOPLIST_FILE = "cetac-nd-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
