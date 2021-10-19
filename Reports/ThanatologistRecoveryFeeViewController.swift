@@ -6,12 +6,12 @@
 //
 
 
-/*
+
 import UIKit
 
 import Charts
 
-class ThanatologistRecoveryFeeReportViewController: UIViewController {
+class ThanatologistRecoveryFeeViewController: UIViewController {
     
     @IBOutlet var barChart: BarChartView!
     let dataController = FeesReportController()
@@ -65,4 +65,4 @@ class ThanatologistRecoveryFeeReportViewController: UIViewController {
 
 }
 
- */
+ 

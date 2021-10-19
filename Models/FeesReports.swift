@@ -2,14 +2,14 @@
 //  SessionReports.swift
 //  cetac-nd-app
 //
-//  Created by Diego Urgell on 18/10/21.
+//  Created by Iñigo Zepeda on 18/10/21.
 //
 
 import Foundation
-/*
+
 class ContinousDataEntries: Codable {
     var labels: [String]?
-    var values: [Int]?
+    var values: [Double]?
 }
 
 class FeesReportController {
@@ -21,13 +21,13 @@ class FeesReportController {
         urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = baseURL
-        urlComponents.path = "/default/session"
+        urlComponents.path = "/default/staff"
     }
     
-    func fetchReportData(reportType: String, timespan: String, completion: @escaping (Result<DiscreteDataEntries, Error>) -> Void) {
+    func fetchReportData(reportType: String, timespan: String, completion: @escaping (Result<ContinousDataEntries, Error>) -> Void) {
         
         urlComponents.queryItems = [
-            URLQueryItem(name: "session_report", value: reportType),
+            URLQueryItem(name: "recovery_fees_report", value: reportType),
             URLQueryItem(name: "timespan", value: timespan)
         ]
         
@@ -37,9 +37,10 @@ class FeesReportController {
             let output = String(data: (data)!, encoding: String.Encoding.utf8) as String?
             print(output)
 
+            //hacer json decode
             if let data = data{
                 do{
-                    let dataSet = try jsonDecoder.decode(DiscreteDataEntries.self, from: data)
+                    let dataSet = try jsonDecoder.decode(ContinousDataEntries.self, from: data)
                     completion(.success(dataSet))
                 } catch {
                     print(error)
@@ -51,7 +52,7 @@ class FeesReportController {
         }.resume()
     }
     
-    func getReportData(reportType: String, timespan: String) -> DiscreteDataEntries {
+    func getReportData(reportType: String, timespan: String) -> ContinousDataEntries {
         group.enter()
         self.fetchReportData(reportType: reportType, timespan: timespan, completion: { (result) in
             DispatchQueue.global().async {
@@ -71,4 +72,4 @@ class FeesReportController {
     }
 }
 
- */
+ 

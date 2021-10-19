@@ -6,7 +6,7 @@
 //
 
 import UIKit
-/*
+
 class RecoveryFeeMainViewController: UIViewController {
 
     @IBOutlet var outletSegment: UISegmentedControl!
@@ -31,7 +31,7 @@ class RecoveryFeeMainViewController: UIViewController {
     }()
     
     //Instancia los controladores hijos
-    private lazy var thanatologistRecoveryFeeReportView: ThanatologistRecoveryReportFeeViewController = {
+    private lazy var thanatologistRecoveryFeeReportView: ThanatologistRecoveryFeeViewController = {
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
@@ -108,4 +108,4 @@ class RecoveryFeeMainViewController: UIViewController {
 
 }
  
- */
+ 

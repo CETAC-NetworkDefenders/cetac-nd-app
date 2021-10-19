@@ -8,7 +8,7 @@
 import UIKit
 
 import Charts
-/*
+
 class GlobalRecoveryFeeReportViewController: UIViewController {
     
     @IBOutlet var barChart: BarChartView!
@@ -63,4 +63,4 @@ class GlobalRecoveryFeeReportViewController: UIViewController {
 
 }
 
- */
+ 
