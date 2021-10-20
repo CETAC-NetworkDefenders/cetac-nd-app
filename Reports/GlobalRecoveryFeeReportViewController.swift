@@ -2,7 +2,7 @@
 //  ServiceTypeReportViewController.swift
 //  cetac-nd-app
 //
-//  Created by Diego Urgell on 18/10/21.
+//  Created by Iñigo Zepeda on 18/10/21.
 //
 
 import UIKit
@@ -11,7 +11,12 @@ import Charts
 
 class GlobalRecoveryFeeReportViewController: UIViewController {
     
+    //@IBOutlet var barChart: BarChartView!
+    
+    //@IBOutlet var barChart: BarChartView!
+    
     @IBOutlet var barChart: BarChartView!
+    
     let dataController = FeesReportController()
 
     override func viewDidLoad() {
@@ -33,8 +38,8 @@ class GlobalRecoveryFeeReportViewController: UIViewController {
         let dataSet = BarChartDataSet(entries: entryList, label: nil)
         dataSet.colors = ChartColorTemplates.joyful()
         let data = BarChartData(dataSets: [dataSet])
+        print(data)
         barChart.data = data
-        
         
         barChart.xAxis.labelFont = UIFont.systemFont(ofSize: 13.0)
         barChart.xAxis.labelTextColor = .black

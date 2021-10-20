@@ -50,18 +50,18 @@ class RecoveryFeeMainViewController: UIViewController {
         outletSegment.selectedSegmentIndex = 0
         changeReport()
         
-        timespanChange(outletSlider)
+        actionChangeTime(outletSlider)
         
         // Do any additional setup after loading the view.
     }
     
     @objc func changeReport(){
         if outletSegment.selectedSegmentIndex == 0 {
-            remove(asChildViewController: globalRecoveryFeeReportView)
-            add(asChildViewController: thanatologistRecoveryFeeReportView)
-        } else {
             remove(asChildViewController: thanatologistRecoveryFeeReportView)
             add(asChildViewController: globalRecoveryFeeReportView)
+        } else {
+            remove(asChildViewController: globalRecoveryFeeReportView)
+            add(asChildViewController: thanatologistRecoveryFeeReportView)
         }
     }
     
@@ -82,7 +82,9 @@ class RecoveryFeeMainViewController: UIViewController {
         viewController.removeFromParent()
     }
     
-    @IBAction func timespanChange(_ sender: UISlider) {
+    
+    @IBAction func actionChangeTime(_ sender: UISlider) {
+        
         let updateValue = sender.value.rounded(.toNearestOrAwayFromZero)
         sender.value = updateValue
         let timespan = timeFrameMapping[Int(updateValue)]!
@@ -90,8 +92,6 @@ class RecoveryFeeMainViewController: UIViewController {
         globalRecoveryFeeReportView.updateReport(timespan: timespan)
         
         thanatologistRecoveryFeeReportView.updateReport(timespan: timespan)
-        
-        
         
     }
     

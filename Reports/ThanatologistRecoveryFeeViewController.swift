@@ -13,7 +13,12 @@ import Charts
 
 class ThanatologistRecoveryFeeViewController: UIViewController {
     
-    @IBOutlet var barChart: BarChartView!
+    //@IBOutlet var barChart: BarChartView!
+    
+    //@IBOutlet var barChart: BarChartView!
+    
+    @IBOutlet var barChart: HorizontalBarChartView!
+    
     let dataController = FeesReportController()
 
     override func viewDidLoad() {
