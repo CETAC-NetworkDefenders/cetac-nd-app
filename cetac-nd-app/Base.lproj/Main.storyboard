@@ -204,8 +204,20 @@
                     <view key="view" contentMode="scaleToFill" id="zKz-BC-li1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5O-DM-IaO" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="414" height="642"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="z3U-Wk-1CC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s5O-DM-IaO" firstAttribute="top" secondItem="z3U-Wk-1CC" secondAttribute="top" id="V0V-WW-PgL"/>
+                            <constraint firstItem="s5O-DM-IaO" firstAttribute="leading" secondItem="z3U-Wk-1CC" secondAttribute="leading" id="WX1-tC-nPf"/>
+                            <constraint firstItem="z3U-Wk-1CC" firstAttribute="bottom" secondItem="s5O-DM-IaO" secondAttribute="bottom" id="cLx-bR-3G9"/>
+                            <constraint firstItem="z3U-Wk-1CC" firstAttribute="trailing" secondItem="s5O-DM-IaO" secondAttribute="trailing" id="hNG-p8-Gct"/>
+                        </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="686"/>
                 </viewController>
@@ -220,8 +232,20 @@
                     <view key="view" contentMode="scaleToFill" id="KVK-ji-Gmx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1D-6c-JMm" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="414" height="642"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YaY-QD-NQy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r1D-6c-JMm" firstAttribute="leading" secondItem="YaY-QD-NQy" secondAttribute="leading" id="TYy-Je-5CW"/>
+                            <constraint firstItem="YaY-QD-NQy" firstAttribute="bottom" secondItem="r1D-6c-JMm" secondAttribute="bottom" id="YJ4-KO-xsO"/>
+                            <constraint firstItem="YaY-QD-NQy" firstAttribute="trailing" secondItem="r1D-6c-JMm" secondAttribute="trailing" id="daj-7Q-ker"/>
+                            <constraint firstItem="r1D-6c-JMm" firstAttribute="top" secondItem="YaY-QD-NQy" secondAttribute="top" id="dkK-bZ-ffm"/>
+                        </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="686"/>
                 </viewController>

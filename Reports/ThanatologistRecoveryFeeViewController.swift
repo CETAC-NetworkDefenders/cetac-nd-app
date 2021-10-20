@@ -24,7 +24,7 @@ class ThanatologistRecoveryFeeViewController: UIViewController {
         
         var entryList:  [BarChartDataEntry] = []
         
-        let rawData = dataController.getReportData(reportType: "service", timespan: timespan)
+        let rawData = dataController.getReportData(reportType: "by_thanatologist", timespan: timespan)
         let limit = rawData.values?.count ?? 0
         
         for index in 0..<limit {

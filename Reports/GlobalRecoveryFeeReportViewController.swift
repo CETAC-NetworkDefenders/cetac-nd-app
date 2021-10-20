@@ -22,7 +22,7 @@ class GlobalRecoveryFeeReportViewController: UIViewController {
         
         var entryList:  [BarChartDataEntry] = []
         
-        let rawData = dataController.getReportData(reportType: "service", timespan: timespan)
+        let rawData = dataController.getReportData(reportType: "global", timespan: timespan)
         let limit = rawData.values?.count ?? 0
         
         for index in 0..<limit {
@@ -34,6 +34,7 @@ class GlobalRecoveryFeeReportViewController: UIViewController {
         dataSet.colors = ChartColorTemplates.joyful()
         let data = BarChartData(dataSets: [dataSet])
         barChart.data = data
+        
         
         barChart.xAxis.labelFont = UIFont.systemFont(ofSize: 13.0)
         barChart.xAxis.labelTextColor = .black
