@@ -260,4 +260,32 @@ class UserController {
             }
         }.resume()
     }
+    
+    func updateRecord(staff_id: String?, record_id: String?, completion: @escaping () -> Void) {
+        urlComponents.queryItems = [
+            URLQueryItem(name: "staff_id", value: staff_id),
+            URLQueryItem(name: "record_id", value: record_id)
+        ]
+        
+        var request = URLRequest(url: urlComponents.url!)
+        request.httpMethod = "PUT"
+        print(urlComponents)
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let httpStatus = response as? HTTPURLResponse {
+                if httpStatus.statusCode != 200 {
+                    print("Expected 200, but returned \(httpStatus.statusCode)")
+                    print(response!)
+                    completion()
+                }
+                else {
+                    completion()
+                }
+            }
+            else if let error = error {
+                print(error)
+                completion()
+            }
+        }.resume()
+    }
 }
