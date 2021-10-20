@@ -26,7 +26,24 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6D6B393826E7C85B008DBC5E"
+            BuildableName = "cetac-nd-app.app"
+            BlueprintName = "cetac-nd-app"
+            ReferencedContainer = "container:cetac-nd-app.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6DEE9227271258A400DBF7E9"
+            BuildableName = "cetac-nd-appTests.xctest"
+            BlueprintName = "cetac-nd-appTests"
+            ReferencedContainer = "container:cetac-nd-app.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
