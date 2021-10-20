@@ -13,6 +13,7 @@ class UserSummary: Codable {
     var firstName: String?
     var firstLastName: String?
     var secondLastName: String?
+    var birthDate: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "user_id"
@@ -20,6 +21,7 @@ class UserSummary: Codable {
         case firstName = "firstname"
         case firstLastName = "first_lastname"
         case secondLastName = "second_lastname"
+        case birthDate = "birth_date"
     }
     
     func getName() -> String {
