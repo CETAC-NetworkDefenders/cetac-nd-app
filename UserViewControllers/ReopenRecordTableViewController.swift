@@ -46,6 +46,7 @@ class ReopenRecordTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "oldUserCell", for: indexPath)
 
         cell.textLabel?.text = userSummaryList?.userList?[indexPath.row].getName()
+        cell.detailTextLabel?.text = userSummaryList?.userList?[indexPath.row].birthDate
         
         return cell
     }
