@@ -77,6 +77,7 @@ class User: Codable {
     var zipCode: String?
     var street: String?
     var addressNumber: String?
+    var children: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -95,6 +96,7 @@ class User: Codable {
         case zipCode = "zip_code"
         case street
         case addressNumber = "address_number"
+        case children
     }
     
     func isValid() -> String? {
@@ -124,6 +126,9 @@ class User: Codable {
         }
         else if addressNumber!.range(of:#"\d{1,5}"#, options: .regularExpression) == nil{
             return "El número de la dirección es incorrecto. Debe tener de 1 a 5 digitos."
+        }
+        else if gender != "Hombre" && gender != "Mujer" && gender != "Otro"{
+            return "Los valores aceptados para el género son: Hombre, Mujer, Otro."
         }
         return nil
     }

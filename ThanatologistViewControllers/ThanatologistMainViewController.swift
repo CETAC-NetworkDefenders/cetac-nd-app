@@ -41,6 +41,13 @@ class ThanatologistMainViewController: UIViewController {
         viewController.didMove(toParent: self)
     }
 
+    @IBAction func logout(_ sender: UIButton) {
+        currentSession = nil
+        helloLabel.text = ""
+        performSegue(withIdentifier: "unwindToLogin", sender: self)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

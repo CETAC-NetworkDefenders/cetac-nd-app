@@ -7,12 +7,12 @@
             {
                 "serviceName": "Objetivos",
                 "description": "Apoyar  a  personas  de  escasos  recursos  con  algún  tipo  de  discapacidad  para  satisfacer  sus necesidades   humanas   de   acuerdo   a   la   pirámide   de   Maslow:   fisiológicas,   de   seguridad,   de pertenencia, reconocimiento y autorrealización, a través de la disciplina de tanatología.Brindar  cuidado,  capacitación  y  orientación  tanto  emocional,  psicológica  y  espiritualmente  a  los adultos mayores, personas con enfermedades, personas con enfermedades crónico-degenerativas y  en  fase  terminal,  como  también  a  sus  familiares.  Asimismo,  proporcionando  contención  a cualquier tipo de pérdida significativa y por muerte logrando reencuentren un nuevo sentido a la vida.Dar acompañamiento y consejería a personas y pacientes que enfrentan situaciones en crisis, estrés postraumático, abusos, maltratos, así como situaciones que provocan pérdidas de distinta índole: pérdida de un familiar, de una extremidad del cuerpo, de autoestima, de identidad, laboral, bienes materiales;   infertilidad,   anorexia,   bulimia,   intentos   de   suicidio,   viudez,   divorcio,   violencia intrafamiliar, infidelidad, portadores de VIH-SIDA o personas con enfermedades en fase terminal, entre otras. También se da acompañamiento a los familiares que son afectados por la situación y el entorno.",
-                "image": ""
+                "image": "objetivos_img"
             },
             {
                 "serviceName": "Filosofía",
                 "description": "Reconocer, comprender y apreciar las emociones y sentimientos de los demás.",
-                "image": "image"
+                "image": "filosofia_img"
             },
             {
                 "serviceName": "Misión",
@@ -54,7 +54,7 @@
             {
                 "serviceName": "Logoterapia",
                 "description": "Proceso para guiar a la persona en su búsqueda del sentido de vida y permite descubrir la  capacidad  que  tienen  los  humanos  para  superar  los  condicionamientos  más  difíciles  “sanar  a través del sentido”. Sanar, cuidar, acompañar lo que implica buscar sentido y esencia para vivir en plenitud.",
-                "image": "image"
+                "image": "logoterapia_img"
             },
             {
                 "serviceName": "Mindfullness",
@@ -81,22 +81,22 @@
             {
                 "serviceName": "Reiki",
                 "description": "Es un método de canalización y transmisión de energía vital para que la persona obtenga paz y equilibrio físico, mental, emocional y espiritual.",
-                "image": "image"
+                "image": "reiki_img"
             },
             {
                 "serviceName": "Biomagnetismo",
                 "description": "Es un método que busca el equilibrio en emociones, mente y energía a través de colocación de imanes en posiciones estratégicas en el cuerpo para lograr una vida más próspera y saludable.",
-                "image": "image"
+                "image": "biomagnetismo_img"
             },
             {
                 "serviceName": "Angeloterapia",
                 "description": "Es una herramienta que te ayuda a trabajar tu autoestima, a darte cuenta de todo tu potencial; te ayuda a ver lo maravilloso y perfecto ser humano que eres y que no hay obstáculos que no puedas superar enfocándonos en una visión siempre positiva y optimista.",
-                "image": "image"
+                "image": "angeloterapia_img"
             },
             {
                 "serviceName": "Cama Térmica de Jade",
                 "description": "El  calor  que  expide  la  cama  térmica  con  regulación  de  temperatura  y  la musicoterapia en conjunto, la persona es transportada a un ambiente de armonía y sensación de calma y relajación de los diferentes músculos de cuerpo con el fin de ayudar a equilibrar cambios de estado de ánimo y de energía corporal.",
-                "image": "image"
+                "image": "cama_jade_img"
             }
         ]
     },
@@ -113,7 +113,7 @@
             {
                 "serviceName": "Brisas Ambientales",
                 "description": "Aromatizantes ambientales con propiedades de aromaterapia que, a través del olfato,  estimula  el  sistema  nervioso  central  ofreciendo  resultados  positivos  en  el  manejo  de  las emociones. Se cuenta con brisas relajantes, brisas reanimante y brisas equilibrantes.",
-                "image": "image"
+                "image": "brisas_img"
             },
         ]
     },

@@ -139,7 +139,9 @@ class SessionController {
         let jsonEncoder = JSONEncoder()
         let jsonData = try? jsonEncoder.encode(session)
         
-        urlComponents.queryItems = nil
+        urlComponents.queryItems = [
+            URLQueryItem(name: "staff_id", value: String(currentSession!.userId!))
+        ]
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = "POST"
         request.setValue("\(String(describing: jsonData?.count))", forHTTPHeaderField: "Content-Length")

@@ -32,6 +32,8 @@ class CreateStaffViewController: UIViewController {
     
     let validationError = UIAlertController(title: "Datos no válidos", message:"", preferredStyle: .alert)
     
+    let authenticationError = UIAlertController(title: "Permiso denegado", message:"Su rol de acceso es Soporte de Administración, por lo que no puede editar la información. Comuniquese con un administrador CETAC.", preferredStyle: .alert)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,9 +56,16 @@ class CreateStaffViewController: UIViewController {
         
         alertSuccess.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         validationError.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        authenticationError.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
         accessLevelField.delegate = self
         accessLevelField.dataSource = self
+        
+        
+        if currentSession?.accessLevel != "admin"{
+            self.present(authenticationError, animated:true)
+            self.disableEdit()
+        }
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {

@@ -27,6 +27,7 @@ class CreateUserViewController: UIViewController {
     @IBOutlet var zipCodeField: UITextField!
     @IBOutlet var streetField: UITextField!
     @IBOutlet var addressNumberField: UITextField!
+    @IBOutlet var childrenField: UITextView!
     
     let alertSuccess = UIAlertController(title: "Usuario actualizado", message: "La informacion del usuario se ha actualizado en la base de datos", preferredStyle: .alert)
     
@@ -87,6 +88,7 @@ class CreateUserViewController: UIViewController {
         user.zipCode = zipCodeField.text
         user.street = streetField.text
         user.addressNumber = addressNumberField.text
+        user.children = childrenField.text
     }
     
     func disableEdit() {
@@ -104,6 +106,7 @@ class CreateUserViewController: UIViewController {
         zipCodeField.isUserInteractionEnabled = false
         streetField.isUserInteractionEnabled = false
         addressNumberField.isUserInteractionEnabled = false
+        childrenField.isUserInteractionEnabled = false
     }
     
     @objc func dismissKeyboard() {

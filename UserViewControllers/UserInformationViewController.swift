@@ -32,6 +32,8 @@ class UserInformationViewController: UIViewController {
     @IBOutlet var streetField: UITextField!
     @IBOutlet var addressNumberField: UITextField!
     @IBOutlet var recordField: UITextField!
+    @IBOutlet var childrenField: UITextView!
+    
     
     let alertSuccess = UIAlertController(title: "Usuario actualizado", message: "La informacion del usuario se ha actualizado en la base de datos", preferredStyle: .alert)
     
@@ -115,6 +117,7 @@ class UserInformationViewController: UIViewController {
         user?.zipCode = zipCodeField.text
         user?.street = streetField.text
         user?.addressNumber = addressNumberField.text
+        user?.children = childrenField.text
     }
     
     func fillData() {
@@ -135,6 +138,7 @@ class UserInformationViewController: UIViewController {
         streetField.text = user?.street
         addressNumberField.text = user?.addressNumber
         recordField.text = String(user!.record_id!)
+        childrenField.text = user?.children
     }
     
     func toggleEdit() -> Void {
@@ -150,6 +154,7 @@ class UserInformationViewController: UIViewController {
         zipCodeField.isUserInteractionEnabled = !zipCodeField.isUserInteractionEnabled
         streetField.isUserInteractionEnabled = !streetField.isUserInteractionEnabled
         addressNumberField.isUserInteractionEnabled = !addressNumberField.isUserInteractionEnabled
+        childrenField.isUserInteractionEnabled = !childrenField.isUserInteractionEnabled
     }
     
     @objc func dismissKeyboard() {
