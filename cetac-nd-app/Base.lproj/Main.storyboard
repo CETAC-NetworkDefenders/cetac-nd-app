@@ -196,6 +196,68 @@
             </objects>
             <point key="canvasLocation" x="-300" y="2325"/>
         </scene>
+        <!--Global Recovery Fee Report View Controller-->
+        <scene sceneID="oio-Ye-0cz">
+            <objects>
+                <viewController storyboardIdentifier="globalRecoveryFeeReportView" id="19Z-Jh-UUM" customClass="GlobalRecoveryFeeReportViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zKz-BC-li1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5O-DM-IaO" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="414" height="642"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="z3U-Wk-1CC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="s5O-DM-IaO" firstAttribute="top" secondItem="z3U-Wk-1CC" secondAttribute="top" id="V0V-WW-PgL"/>
+                            <constraint firstItem="s5O-DM-IaO" firstAttribute="leading" secondItem="z3U-Wk-1CC" secondAttribute="leading" id="WX1-tC-nPf"/>
+                            <constraint firstItem="z3U-Wk-1CC" firstAttribute="bottom" secondItem="s5O-DM-IaO" secondAttribute="bottom" id="cLx-bR-3G9"/>
+                            <constraint firstItem="z3U-Wk-1CC" firstAttribute="trailing" secondItem="s5O-DM-IaO" secondAttribute="trailing" id="hNG-p8-Gct"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="686"/>
+                    <connections>
+                        <outlet property="barChart" destination="s5O-DM-IaO" id="rxf-5A-OMw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTt-e1-RIn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="2320"/>
+        </scene>
+        <!--Thanatologist Recovery Fee View Controller-->
+        <scene sceneID="8tk-jY-Aj7">
+            <objects>
+                <viewController storyboardIdentifier="thanatologistRecoveryFeeReportView" id="cqB-lU-40N" customClass="ThanatologistRecoveryFeeViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KVK-ji-Gmx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1D-6c-JMm" customClass="HorizontalBarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="44" width="414" height="642"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YaY-QD-NQy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r1D-6c-JMm" firstAttribute="leading" secondItem="YaY-QD-NQy" secondAttribute="leading" id="TYy-Je-5CW"/>
+                            <constraint firstItem="YaY-QD-NQy" firstAttribute="bottom" secondItem="r1D-6c-JMm" secondAttribute="bottom" id="YJ4-KO-xsO"/>
+                            <constraint firstItem="YaY-QD-NQy" firstAttribute="trailing" secondItem="r1D-6c-JMm" secondAttribute="trailing" id="daj-7Q-ker"/>
+                            <constraint firstItem="r1D-6c-JMm" firstAttribute="top" secondItem="YaY-QD-NQy" secondAttribute="top" id="dkK-bZ-ffm"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="686"/>
+                    <connections>
+                        <outlet property="barChart" destination="r1D-6c-JMm" id="Ypa-p7-wnn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xez-Gj-hRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="2906"/>
+        </scene>
         <!--Intervention Type Report View Controller-->
         <scene sceneID="1Cg-gb-IQt">
             <objects>
@@ -225,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNp-nE-5vU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534.78260869565224" y="2325.3348214285711"/>
+            <point key="canvasLocation" x="-309" y="2856"/>
         </scene>
         <!--Gender Report View Controller-->
         <scene sceneID="cdC-ER-v2C">
@@ -424,14 +486,75 @@
         <!--Reporte Cuotas de Recuperación-->
         <scene sceneID="bvS-3B-xT6">
             <objects>
-                <viewController id="6P1-YN-fuz" sceneMemberID="viewController">
+                <viewController id="6P1-YN-fuz" customClass="RecoveryFeeMainViewController" customModule="cetac_nd_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qNE-J1-8L0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-Ju-ZXl">
+                                <rect key="frame" x="25" y="118" width="364" height="32"/>
+                                <segments>
+                                    <segment title="Global"/>
+                                    <segment title="Por Tanatòlogo"/>
+                                </segments>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="3" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8O-hR-f93">
+                                <rect key="frame" x="23" y="174" width="368" height="31"/>
+                                <connections>
+                                    <action selector="actionChangeTime:" destination="6P1-YN-fuz" eventType="valueChanged" id="ZMh-BD-Z8y"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="HYc-O6-16n">
+                                <rect key="frame" x="25" y="209" width="364" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJi-R4-bTX">
+                                        <rect key="frame" x="0.0" y="0.0" width="61.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92f-57-mmO">
+                                        <rect key="frame" x="173.5" y="0.0" width="32.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Año" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUz-6f-OSS">
+                                        <rect key="frame" x="333.5" y="0.0" width="30.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBb-Bq-zOJ">
+                                <rect key="frame" x="25" y="239.5" width="364" height="553.5"/>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="q8N-e7-NOr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q8N-e7-NOr" firstAttribute="trailing" secondItem="HYc-O6-16n" secondAttribute="trailing" constant="25" id="5J4-mM-1jf"/>
+                            <constraint firstItem="UBb-Bq-zOJ" firstAttribute="leading" secondItem="q8N-e7-NOr" secondAttribute="leading" constant="25" id="79y-iW-Tma"/>
+                            <constraint firstItem="HYc-O6-16n" firstAttribute="top" secondItem="l8O-hR-f93" secondAttribute="bottom" constant="5" id="91N-NM-I9N"/>
+                            <constraint firstItem="gdg-Ju-ZXl" firstAttribute="top" secondItem="q8N-e7-NOr" secondAttribute="top" constant="30" id="HrW-7W-48z"/>
+                            <constraint firstItem="l8O-hR-f93" firstAttribute="leading" secondItem="q8N-e7-NOr" secondAttribute="leading" constant="25" id="LcG-Au-qun"/>
+                            <constraint firstItem="q8N-e7-NOr" firstAttribute="bottom" secondItem="UBb-Bq-zOJ" secondAttribute="bottom" constant="20" id="PmO-V4-Wv0"/>
+                            <constraint firstItem="l8O-hR-f93" firstAttribute="top" secondItem="gdg-Ju-ZXl" secondAttribute="bottom" constant="25" id="WLx-9v-opf"/>
+                            <constraint firstItem="HYc-O6-16n" firstAttribute="leading" secondItem="q8N-e7-NOr" secondAttribute="leading" constant="25" id="WuH-Mu-Ns1"/>
+                            <constraint firstItem="q8N-e7-NOr" firstAttribute="trailing" secondItem="UBb-Bq-zOJ" secondAttribute="trailing" constant="25" id="dYr-ib-TOU"/>
+                            <constraint firstItem="UBb-Bq-zOJ" firstAttribute="top" secondItem="HYc-O6-16n" secondAttribute="bottom" constant="10" id="s4Y-QJ-vUp"/>
+                            <constraint firstItem="q8N-e7-NOr" firstAttribute="trailing" secondItem="gdg-Ju-ZXl" secondAttribute="trailing" constant="25" id="toE-cv-qir"/>
+                            <constraint firstItem="gdg-Ju-ZXl" firstAttribute="leading" secondItem="q8N-e7-NOr" secondAttribute="leading" constant="25" id="try-uA-8UC"/>
+                            <constraint firstItem="q8N-e7-NOr" firstAttribute="trailing" secondItem="l8O-hR-f93" secondAttribute="trailing" constant="25" id="zkH-J8-dTd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reporte Cuotas de Recuperación" id="rSb-pK-x7g"/>
+                    <connections>
+                        <outlet property="outletContainer" destination="UBb-Bq-zOJ" id="Xh0-aH-hnW"/>
+                        <outlet property="outletSegment" destination="gdg-Ju-ZXl" id="K7W-9P-fDD"/>
+                        <outlet property="outletSlider" destination="l8O-hR-f93" id="iid-g7-pfC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYI-22-bE6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
